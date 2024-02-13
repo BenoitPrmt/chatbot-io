@@ -15,7 +15,7 @@ export default () => (`
             </li>
           </ul>
           <form class="d-flex" role="search">
-            <input class="input-search form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <input class="input-search form-control me-2" type="search" placeholder="Search a chat..." aria-label="Search">
           </form>
         </div>
       </div>
