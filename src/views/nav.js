@@ -11,7 +11,7 @@ export default () => (`
               <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/account">Account</a>
+              <a class="nav-link" href="/bots">Bots</a>
             </li>
           </ul>
           <form class="d-flex" role="search">
