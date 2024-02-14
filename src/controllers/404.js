@@ -9,10 +9,10 @@ const PageNotFound = class {
 
   render() {
     return `
-        <div class="container">
           <div class="row">
             <div class="col-12">${viewNav()}</div>
           </div>
+          <div class="container pt-3">
           <div>
               <h1>404</h1>
               <h2>Page not found</h2>

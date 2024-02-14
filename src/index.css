@@ -1,6 +1,4 @@
-@charset "utf-8";
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -15,34 +13,25 @@ body {
 
 nav {
   align-items: center;
-  border-bottom: 1px solid #e5e7eb4c !important;
-
-  img {
-    width: 3em;
-    transition: 0.5s;
-  }
-
-  img:hover {
-    -webkit-transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
-    -moz-transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
-    -ms-transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
-    -o-transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
-    transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
-  }
-
-  button {
-    color: white !important;
-    border: 2px solid grey !important;
-
-    i {
-      color: grey !important;
-      transition: 0.5s;
-    }
-
-    i:hover {
-      color: #0d6efd !important;
-    }
-  }
+  border-bottom: 1px solid rgba(229, 231, 235, 0.2980392157) !important;
+}
+nav img {
+  width: 3em;
+  transition: 0.5s;
+}
+nav img:hover {
+  transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
+}
+nav button {
+  color: white !important;
+  border: 2px solid grey !important;
+}
+nav button i {
+  color: grey !important;
+  transition: 0.5s;
+}
+nav button i:hover {
+  color: #0d6efd !important;
 }
 
 .nav-link {
@@ -64,7 +53,7 @@ nav {
 }
 
 .left-side {
-  border-right: 1px solid #e5e7eb4c;
+  border-right: 1px solid rgba(229, 231, 235, 0.2980392157);
 }
 
 .messages {
@@ -80,9 +69,8 @@ nav {
 .card {
   background-color: #101827;
   padding: 1rem;
-
-  .btn {
-    background-color: #0d6efd !important;
-    color: white !important;
-  }
 }
+.card .btn {
+  background-color: #0d6efd !important;
+  color: white !important;
+}/*# sourceMappingURL=index.css.map */

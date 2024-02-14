@@ -22,12 +22,12 @@ const Bots = class {
 
   render() {
     return `
-    <div class="container">
         <div class="row">
           <div class="col-12">${viewNav()}</div>
         </div>
+    <div class="container pt-4">
         ${viewBots(this.data)}
-      </div>
+    </div>
     `;
   }
 
