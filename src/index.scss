@@ -86,3 +86,22 @@ nav {
     color: white !important;
   }
 }
+
+// TODO: À MODIFIER
+.chat {
+  overflow-y: scroll;
+  margin-bottom: 12px;
+  height: 80vh;
+  border: 1px solid red;
+  background-color: lightblue;
+}
+
+.chat > * {
+  margin-bottom: 12px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
