@@ -4,6 +4,7 @@
   padding: 0;
   color: #fff;
   font-family: "Work Sans", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -20,10 +21,6 @@ nav img {
   transition: 0.5s;
 }
 nav img:hover {
-  -webkit-transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
-  -moz-transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
-  -ms-transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
-  -o-transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
   transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
 }
 nav button {
@@ -44,7 +41,6 @@ nav button i:hover {
   font-size: 1.5em;
   transition: 0.3s !important;
 }
-
 .nav-link:hover {
   transform: translateY(-5px);
   color: #0d6efd !important;
@@ -56,13 +52,73 @@ nav button i:hover {
   padding: 1rem;
 }
 
+.right-side {
+  overflow-y: scroll;
+  margin-bottom: 12px;
+  height: 80vh;
+  transition: 0.5s;
+}
+.right-side h5 {
+  letter-spacing: 1px;
+  margin-top: 5px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.right-side h5:hover {
+  color: #0d6efd;
+  letter-spacing: 2px;
+}
+.right-side .card {
+  color: #0d6efd;
+}
+.right-side .messages {
+  bottom: 0;
+  position: sticky;
+}
+.right-side .messages .input-group {
+  margin-bottom: 12px;
+}
+.right-side .messages .input-group .btn {
+  background-color: #0d6efd;
+  color: white;
+  border: 2px solid #0d6efd;
+  transition: 0.5s;
+}
+.right-side .messages .input-group .btn:hover {
+  background-color: white;
+  color: #0d6efd;
+}
+.right-side .messages .input-group .btn i {
+  transition: 0.5s;
+  color: #FFF;
+}
+.right-side .messages .input-group .btn:hover i {
+  color: #0d6efd;
+}
+
+.right-side > * {
+  margin-bottom: 12px;
+}
+
 .left-side {
   border-right: 1px solid rgba(229, 231, 235, 0.2980392157);
 }
+.left-side li {
+  cursor: pointer;
+  list-style: none;
+}
+.left-side li:hover {
+  background-color: #0d6efd;
+  transition: background-color 0.2s linear;
+}
+.left-side li:hover h5 {
+  color: #FFF !important;
+  transition: color 0.2s linear;
+}
 
-.messages {
-  height: 80vh;
-  box-sizing: border-box;
+.chat {
   background-color: #101827;
   width: 90%;
   margin: 0 auto;
@@ -70,31 +126,32 @@ nav button i:hover {
   padding: 1rem;
 }
 
+.list-group-item {
+  background-color: #FFF;
+  border-radius: 0.25rem;
+}
+
 .card {
   background-color: #101827;
   padding: 1rem;
+}
+.card .card-header {
+  gap: 10px;
+  display: flex;
+  align-items: center;
 }
 .card .btn {
   background-color: #0d6efd !important;
   color: white !important;
 }
 
-.chat {
-  overflow-y: scroll;
-  margin-bottom: 12px;
-  height: 80vh;
-  border: 1px solid red;
-  background-color: lightblue;
-}
-
-.chat > * {
-  margin-bottom: 12px;
-}
-
 .avatar {
   width: 50px;
   height: 50px;
-  border-radius: 50%;
 }
 
-/*# sourceMappingURL=index.css.map */
+@media (max-width: 768px) {
+  .list-group-item h5 {
+    font-size: 1rem;
+  }
+}/*# sourceMappingURL=index.css.map */

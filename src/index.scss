@@ -6,6 +6,7 @@
   padding: 0;
   color: #fff;
   font-family: "Work Sans", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -20,14 +21,14 @@ nav {
   img {
     width: 3em;
     transition: 0.5s;
-  }
 
-  img:hover {
-    -webkit-transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
-    -moz-transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
-    -ms-transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
-    -o-transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
-    transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
+    &:hover {
+      -webkit-transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
+      -moz-transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
+      -ms-transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
+      -o-transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
+      transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
+    }
   }
 
   button {
@@ -37,10 +38,10 @@ nav {
     i {
       color: grey !important;
       transition: 0.5s;
-    }
 
-    i:hover {
-      color: #0d6efd !important;
+      &:hover {
+        color: #0d6efd !important;
+      }
     }
   }
 }
@@ -50,11 +51,11 @@ nav {
   color: grey !important;
   font-size: 1.5em;
   transition: 0.3s !important;
-}
 
-.nav-link:hover {
-  transform: translateY(-5px);
-  color: #0d6efd !important;
+  &:hover {
+    transform: translateY(-5px);
+    color: #0d6efd !important;
+  }
 }
 
 .left-side,
@@ -63,13 +64,87 @@ nav {
   padding: 1rem;
 }
 
-.left-side {
-  border-right: 1px solid #e5e7eb4c;
+.right-side {
+  overflow-y: scroll;
+  margin-bottom: 12px;
+  height: 80vh;
+  transition: 0.5s;
+
+  h5 {
+    letter-spacing: 1px;
+    margin-top: 5px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.5s;
+
+
+    &:hover {
+      color: #0d6efd;
+      letter-spacing: 2px;
+    }
+  }
+
+  .card {
+    color: #0d6efd;
+  }
+
+  .messages {
+    bottom: 0;
+    position: sticky;
+
+    .input-group {
+      margin-bottom: 12px;
+
+      .btn {
+        background-color: #0d6efd;
+        color: white;
+        border: 2px solid #0d6efd;
+        transition: 0.5s;
+
+        &:hover {
+          background-color: white;
+          color: #0d6efd;
+        }
+
+        i {
+          transition: 0.5s;
+          color: #FFF;
+        }
+
+        &:hover i {
+          color: #0d6efd;
+        }
+      }
+    }
+  }
 }
 
-.messages {
-  height: 80vh;
-  box-sizing: border-box;
+.right-side>* {
+  margin-bottom: 12px;
+}
+
+.left-side {
+  border-right: 1px solid #e5e7eb4c;
+
+  li {
+    cursor: pointer;
+    list-style: none;
+
+
+    &:hover {
+      background-color: #0d6efd;
+      transition: background-color 0.2s linear;
+    }
+
+    &:hover h5 {
+      color: #FFF !important;
+      transition: color 0.2s linear;
+    }
+  }
+}
+
+.chat {
   background-color: #101827;
   width: 90%;
   margin: 0 auto;
@@ -77,9 +152,20 @@ nav {
   padding: 1rem;
 }
 
+.list-group-item {
+  background-color: #FFF;
+  border-radius: 0.25rem;
+}
+
 .card {
   background-color: #101827;
   padding: 1rem;
+
+  .card-header {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+  }
 
   .btn {
     background-color: #0d6efd !important;
@@ -88,20 +174,14 @@ nav {
 }
 
 // TODO: À MODIFIER
-.chat {
-  overflow-y: scroll;
-  margin-bottom: 12px;
-  height: 80vh;
-  border: 1px solid red;
-  background-color: lightblue;
-}
-
-.chat > * {
-  margin-bottom: 12px;
-}
 
 .avatar {
   width: 50px;
   height: 50px;
-  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .list-group-item h5 {
+    font-size: 1rem;
+  }
 }
