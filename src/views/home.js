@@ -2,7 +2,7 @@ export default () => (`
     <section class="row chat">
     <div class="col-3 left-side">
     <h3 class="text-light">Bots' Name</h3>
-    <ul class="list-group gap-3 pt-3">
+    <ul class="list-group gap-3 pt-3 col-11">
     <li class="list-group-item">
     <div class="d-flex flex-column flex-lg-row gap-3 align-items-center">
     <img class="avatar rounded-circle"
@@ -34,7 +34,7 @@ export default () => (`
     <div class="d-flex justify-content-end">
     <div class="card">
     <div class="card-header justify-content-end">
-    <h5>Bot 1</h5>
+    <h5>Benoît</h5>
     <img class="avatar rounded-circle"
                  src="https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2022/12/tortue-marine-scaled.jpg"
                  alt="">
@@ -51,7 +51,7 @@ export default () => (`
     <img class="avatar rounded-circle"
                  src="https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2022/12/tortue-marine-scaled.jpg"
                  alt="">
-        <h5>Benoît</h5>
+        <h5>Bot 1</h5>
     </div>
         <div class="card-body">
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -64,7 +64,7 @@ export default () => (`
     <img class="avatar rounded-circle"
                  src="https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2022/12/tortue-marine-scaled.jpg"
                  alt="">
-        <h5>Benoît</h5>
+        <h5>Bot 1</h5>
     </div>
         <div class="card-body">
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -77,7 +77,7 @@ export default () => (`
     <img class="avatar rounded-circle"
                  src="https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2022/12/tortue-marine-scaled.jpg"
                  alt="">
-        <h5>Benoît</h5>
+        <h5>Bot 1</h5>
     </div>
         <div class="card-body">
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -90,7 +90,7 @@ export default () => (`
     <img class="avatar rounded-circle"
                  src="https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2022/12/tortue-marine-scaled.jpg"
                  alt="">
-        <h5>Benoît</h5>
+        <h5>Bot 1</h5>
     </div>
         <div class="card-body">
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -103,7 +103,7 @@ export default () => (`
     <img class="avatar rounded-circle"
                  src="https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2022/12/tortue-marine-scaled.jpg"
                  alt="">
-        <h5>Benoît</h5>
+        <h5>Bot 1</h5>
     </div>
         <div class="card-body">
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -115,7 +115,7 @@ export default () => (`
 <img class="avatar rounded-circle"
              src="https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2022/12/tortue-marine-scaled.jpg"
              alt="">
-    <h5>Benoît</h5>
+    <h5>Bot 1</h5>
 </div>
     <div class="card-body">
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
