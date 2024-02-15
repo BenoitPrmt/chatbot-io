@@ -1,21 +1,13 @@
 import viewNav from '../views/nav';
 import viewBots from '../views/bots';
+import botsData from '../data/botsData.json';
 
 const Bots = class {
   constructor(params) {
     this.el = document.querySelector('#root');
     this.params = params;
 
-    this.data = [
-      {
-        name: 'Dark Vador',
-        id: 1
-      },
-      {
-        name: 'Dark Sidious',
-        id: 2
-      }
-    ];
+    this.bots = botsData;
 
     this.run();
   }
@@ -26,7 +18,7 @@ const Bots = class {
           <div class="col-12">${viewNav()}</div>
         </div>
     <div class="container pt-4">
-        ${viewBots(this.data)}
+        ${viewBots(this.bots)}
     </div>
     `;
   }

@@ -1,6 +1,8 @@
 import viewNav from '../views/nav';
 import viewHome from '../views/home';
 import viewMessage from '../views/message';
+import botsData from '../data/botsData.json';
+import commandsData from '../data/commandsData.json';
 
 const Home = class {
   constructor(params) {
@@ -8,7 +10,27 @@ const Home = class {
     this.params = params;
     this.messages = [];
 
+    this.bots = botsData;
+    this.commands = commandsData;
+
     this.run();
+  }
+
+  checkIfCommand(message) {
+    const command = this.commands.find((cmd) => cmd.command === message.content);
+    if (command) {
+      if (command.bots === 'all') {
+        this.bots.forEach((bot) => {
+          this.sendMessage({
+            sender: bot.name,
+            receiver: 'User',
+            date: new Date(),
+            content: command.response.replace('{{user}}', 'Bob'),
+            avatar: 'https://source.boringavatars.com/'
+          });
+        });
+      }
+    }
   }
 
   userSendMessage() {
@@ -45,6 +67,8 @@ const Home = class {
     this.updateLocalStorage(messageToSend);
 
     elMessagesSection.innerHTML += viewMessage(messageToSend);
+    this.checkIfCommand(messageToSend);
+
     this.scrollToBottom();
   }
 
@@ -97,13 +121,13 @@ const Home = class {
     document.addEventListener('keyup', (e) => {
       if (e.code === 'Enter') {
         this.userSendMessage();
-        this.sendMessage({
-          sender: 'Bot',
-          receiver: 'User',
-          date: new Date(),
-          content: 'Bonjour User ! Bienvenue dans le chat !',
-          avatar: 'https://source.boringavatars.com/'
-        });
+        // this.sendMessage({
+        //   sender: 'Bot',
+        //   receiver: 'User',
+        //   date: new Date(),
+        //   content: 'Bonjour User ! Bienvenue dans le chat !',
+        //   avatar: 'https://source.boringavatars.com/'
+        // });
       }
     });
   }

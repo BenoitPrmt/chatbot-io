@@ -1,0 +1,8 @@
+[
+  {
+    "command": "hello",
+    "bots": "all",
+    "response": "Bonjour {{user}}, ça va ?",
+    "useAPI": false
+  }
+]

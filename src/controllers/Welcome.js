@@ -6,17 +6,6 @@ const Welcome = class {
     this.el = document.querySelector('#root');
     this.params = params;
 
-    this.data = [
-      {
-        name: 'Dark Vador',
-        id: 1
-      },
-      {
-        name: 'Dark Sidious',
-        id: 2
-      }
-    ];
-
     this.run();
   }
 
