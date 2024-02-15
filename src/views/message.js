@@ -1,21 +1,23 @@
+import messageHeader from './messageHeader';
+
 export default (data) => {
   const {
     sender,
     content
   } = data;
+  const position = sender === 'User' ? 'justify-content-end' : 'justify-content-start';
+  const classPosition = sender === 'User' ? 'right-body' : 'left-body';
+
   return `
-    <div class="d-flex ${sender === 'User' ? 'justify-content-end' : 'justify-content-start'}">
+    <div class="d-flex ${position}">
       <div class="card">
-        <div class="card-header ${sender === 'User' ? 'justify-content-end' : 'justify-content-start'}">
-          <h5 class="text-light">${sender}</h5>
-          <img class="avatar rounded-circle"
-                       src="https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2022/12/tortue-marine-scaled.jpg"
-                       alt="">
+        <div class="card-header ${position}">
+        ${messageHeader(position, sender)} 
         </div>
-        <div class="card-body bg-light text-black ${sender === 'User' ? 'right-body' : 'left-body'}">
+        <div class="card-body bg-light text-black ${classPosition}">
             <p class="card-text">${content}</p>
         </div>
-      </div>
-    </div>
-    `;
+      </div >
+    </div >
+      `;
 };
