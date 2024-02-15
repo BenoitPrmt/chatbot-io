@@ -30,7 +30,9 @@ export default () => (`
     </div></li></ul>
     </div>
     <div class="col-9 right-side">
-
+    
+    <div class="messages-section">
+    
     <div class="d-flex justify-content-end">
     <div class="card">
     <div class="card-header justify-content-end">
@@ -122,11 +124,15 @@ export default () => (`
     </div>
 </div>
 </div>
+    
+    </div>
+
+    
 <div class="messages">
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Type something..." aria-label="Type something..."
+            <input type="text" class="form-control input-message-content" placeholder="Type something..." aria-label="Type something..."
                    aria-describedby="button-addon2">
-            <button class="btn btn-dark" type="button" id="button-addon2"><i class="fa-solid fa-paper-plane"></i></button>
+            <button class="btn btn-dark send-message" type="button" id="button-addon2"><i class="fa-solid fa-paper-plane"></i></button>
         </div>
     </div>
 </div>
