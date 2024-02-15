@@ -11,29 +11,38 @@ const Home = class {
     this.run();
   }
 
-  sendMessage() {
+  userSendMessage() {
     const elInputMessageContent = document.querySelector('.input-message-content');
-    const elMessagesSection = document.querySelector('.messages-section');
 
     if (elInputMessageContent.value.length === 0) return;
 
-    const messageToSend = {
-      sender: 'User',
-      senderType: 'user',
-      receiver: 'Bot 1',
-      date: new Date(),
-      content: elInputMessageContent.value
-    };
-
-    elMessagesSection.innerHTML += this.addMessageToSection(messageToSend);
-    this.scrollToBottom();
-
-    this.messages.push(messageToSend);
+    this.sendMessage('User', 'user', 'Bot', elInputMessageContent.value);
     elInputMessageContent.value = '';
   }
 
+  sendMessage(sender, senderType, receiver, content) {
+    const elMessagesSection = document.querySelector('.messages-section');
+
+    const messageToSend = {
+      sender,
+      senderType,
+      receiver,
+      date: new Date(),
+      content
+    };
+
+    this.messages.push(messageToSend);
+
+    elMessagesSection.innerHTML += this.addMessageToSection(messageToSend);
+    this.scrollToBottom();
+  }
+
   addMessageToSection(message) {
-    const { sender, senderType, content } = message;
+    const {
+      sender,
+      senderType,
+      content
+    } = message;
     return `
     <div class="d-flex ${senderType === 'user' ? 'justify-content-end' : 'justify-content-start'}">
       <div class="card">
@@ -74,12 +83,13 @@ const Home = class {
 
     const elSendButton = document.querySelector('.send-message');
     elSendButton.addEventListener('click', () => {
-      this.sendMessage();
+      this.userSendMessage();
     });
 
     document.addEventListener('keyup', (e) => {
       if (e.code === 'Enter') {
-        this.sendMessage();
+        this.userSendMessage();
+        this.sendMessage('Bot', 'bot', 'User', 'Bonjour !');
       }
     });
   }
