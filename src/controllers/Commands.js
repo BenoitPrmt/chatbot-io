@@ -1,27 +1,40 @@
-import viewNav from '../views/nav';
-import viewWelcome from '../views/welcome';
+import botsData from '../data/botsData.json';
+import commandsData from '../data/commandsData.json';
 
 const Commands = class {
-  constructor(params) {
-    this.el = document.querySelector('#root');
-    this.params = params;
+  constructor(chatClass, message) {
+    this.chatClass = chatClass;
 
-    this.run();
+    this.bots = botsData;
+    this.commands = commandsData;
+
+    this.checkIfCommand(message);
   }
 
-  render() {
-    return `
-        <div class="row">
-          <div class="col-12">${viewNav()}</div>
-        </div>
-    <div class="container pt-4">
-        ${viewWelcome()}
-    </div>
-    `;
-  }
-
-  run() {
-    this.el.innerHTML = this.render();
+  checkIfCommand(message) {
+    const command = this.commands.find((cmd) => cmd.command === message.content);
+    if (command) {
+      if (command.bots === 'all') {
+        this.bots.forEach((bot) => {
+          this.chatClass.sendMessage({
+            sender: bot.name,
+            receiver: 'User',
+            date: new Date(),
+            content: command.response.replace('{{user}}', 'Bob'),
+            avatar: bot.avatar
+          });
+        });
+      } else {
+        const bot = this.bots.find((b) => b.id === command.bots);
+        this.chatClass.sendMessage({
+          sender: bot.name,
+          receiver: 'User',
+          date: new Date(),
+          content: command.response.replace('{{user}}', 'Bob'),
+          avatar: bot.avatar
+        });
+      }
+    }
   }
 };
 

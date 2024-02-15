@@ -1,6 +1,7 @@
 import viewMessage from '../views/message';
 import botsData from '../data/botsData.json';
-import commandsData from '../data/commandsData.json';
+import Commands from './Commands';
+// import commandsData from '../data/commandsData.json';
 
 const Chat = class {
   constructor() {
@@ -8,7 +9,6 @@ const Chat = class {
 
     this.messages = [];
     this.bots = botsData;
-    this.commands = commandsData;
 
     this.scrollToBottom();
 
@@ -22,32 +22,6 @@ const Chat = class {
         this.userSendMessage();
       }
     });
-  }
-
-  checkIfCommand(message) {
-    const command = this.commands.find((cmd) => cmd.command === message.content);
-    if (command) {
-      if (command.bots === 'all') {
-        this.bots.forEach((bot) => {
-          this.sendMessage({
-            sender: bot.name,
-            receiver: 'User',
-            date: new Date(),
-            content: command.response.replace('{{user}}', 'Bob'),
-            avatar: bot.avatar
-          });
-        });
-      } else {
-        const bot = this.bots.find((b) => b.id === command.bots);
-        this.sendMessage({
-          sender: bot.name,
-          receiver: 'User',
-          date: new Date(),
-          content: command.response.replace('{{user}}', 'Bob'),
-          avatar: bot.avatar
-        });
-      }
-    }
   }
 
   userSendMessage() {
@@ -82,7 +56,9 @@ const Chat = class {
     this.updateLocalStorage(messageToSend);
 
     this.run(messageToSend);
-    this.checkIfCommand(messageToSend);
+
+    // Check if this message is a command
+    new Commands(this, messageToSend);
 
     this.scrollToBottom();
   }
