@@ -6,7 +6,6 @@ const Home = class {
   constructor(params) {
     this.el = document.querySelector('#root');
     this.params = params;
-
     this.messages = [];
 
     this.run();
@@ -20,7 +19,9 @@ const Home = class {
     this.sendMessage({
       sender: 'User',
       receiver: 'Bot',
-      content: elInputMessageContent.value
+      date: new Date(),
+      content: elInputMessageContent.value,
+      avatar: 'https://source.boringavatars.com/'
     });
     elInputMessageContent.value = '';
   }
@@ -28,19 +29,43 @@ const Home = class {
   sendMessage(messageData) {
     const elMessagesSection = document.querySelector('.messages-section');
 
-    const { sender, receiver, content } = messageData;
+    const {
+      sender, receiver, date, content, avatar
+    } = messageData;
 
     const messageToSend = {
       sender,
       receiver,
-      date: new Date(),
-      content
+      date,
+      content,
+      avatar
     };
 
     this.messages.push(messageToSend);
+    this.updateLocalStorage(messageToSend);
 
     elMessagesSection.innerHTML += viewMessage(messageToSend);
     this.scrollToBottom();
+  }
+
+  updateLocalStorage(newData) {
+    let data = localStorage.getItem('messages') || '[]';
+    data = JSON.parse(data);
+
+    if (!data.includes(newData)) {
+      data.push(newData);
+    }
+
+    localStorage.setItem('messages', JSON.stringify(data));
+  }
+
+  showOldMessages() {
+    let data = localStorage.getItem('messages') || '[]';
+    data = JSON.parse(data);
+
+    data.forEach((message) => {
+      this.sendMessage(message);
+    });
   }
 
   scrollToBottom() {
@@ -75,7 +100,9 @@ const Home = class {
         this.sendMessage({
           sender: 'Bot',
           receiver: 'User',
-          content: 'Bonjour User ! Bienvenue dans le chat !'
+          date: new Date(),
+          content: 'Bonjour User ! Bienvenue dans le chat !',
+          avatar: 'https://source.boringavatars.com/'
         });
       }
     });

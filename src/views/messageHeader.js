@@ -1,16 +1,16 @@
-export default (position, sender) => {
+export default (position, sender, avatar) => {
   if (position.includes('end')) {
     return `
       <h5 class="text-light">${sender}</h5>
       <img class="avatar rounded-circle"
-           src="https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2022/12/tortue-marine-scaled.jpg"
-           alt="${sender}"></img>
+           src="${avatar}"
+           alt="${sender}">
     `;
   }
   return `
       <img class="avatar rounded-circle"
-           src="https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2022/12/tortue-marine-scaled.jpg"
-           alt="${sender}"></img>
+           src="${avatar}"
+           alt="${sender}">
       <h5 class="text-light">${sender}</h5>
     `;
 };
