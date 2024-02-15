@@ -1,5 +1,6 @@
 import viewNav from '../views/nav';
 import viewHome from '../views/home';
+import viewMessage from '../views/message';
 
 const Home = class {
   constructor(params) {
@@ -16,16 +17,21 @@ const Home = class {
 
     if (elInputMessageContent.value.length === 0) return;
 
-    this.sendMessage('User', 'user', 'Bot', elInputMessageContent.value);
+    this.sendMessage({
+      sender: 'User',
+      receiver: 'Bot',
+      content: elInputMessageContent.value
+    });
     elInputMessageContent.value = '';
   }
 
-  sendMessage(sender, senderType, receiver, content) {
+  sendMessage(messageData) {
     const elMessagesSection = document.querySelector('.messages-section');
+
+    const { sender, receiver, content } = messageData;
 
     const messageToSend = {
       sender,
-      senderType,
       receiver,
       date: new Date(),
       content
@@ -33,31 +39,8 @@ const Home = class {
 
     this.messages.push(messageToSend);
 
-    elMessagesSection.innerHTML += this.addMessageToSection(messageToSend);
+    elMessagesSection.innerHTML += viewMessage(messageToSend);
     this.scrollToBottom();
-  }
-
-  addMessageToSection(message) {
-    const {
-      sender,
-      senderType,
-      content
-    } = message;
-    return `
-    <div class="d-flex ${senderType === 'user' ? 'justify-content-end' : 'justify-content-start'}">
-      <div class="card">
-        <div class="card-header ${senderType === 'user' ? 'justify-content-end' : 'justify-content-start'}">
-          <h5>${sender}</h5>
-          <img class="avatar rounded-circle"
-                       src="https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2022/12/tortue-marine-scaled.jpg"
-                       alt="">
-        </div>
-        <div class="card-body">
-            <p class="card-text">${content}</p>
-        </div>
-      </div>
-    </div>
-    `;
   }
 
   scrollToBottom() {
@@ -89,7 +72,11 @@ const Home = class {
     document.addEventListener('keyup', (e) => {
       if (e.code === 'Enter') {
         this.userSendMessage();
-        this.sendMessage('Bot', 'bot', 'User', 'Bonjour !');
+        this.sendMessage({
+          sender: 'Bot',
+          receiver: 'User',
+          content: 'Bonjour User ! Bienvenue dans le chat !'
+        });
       }
     });
   }
