@@ -69,13 +69,9 @@ h5 {
 }
 
 .right-side {
-  overflow-y: scroll;
-  scrollbar-color: #0d6efd transparent;
-  scrollbar-width: thin;
   margin-bottom: 12px;
-  height: 75vh;
   transition: 0.5s;
-  position: relative;
+  height: 75vh;
 
   h5 {
     letter-spacing: 1px;
@@ -97,14 +93,9 @@ h5 {
 
   .messages {
     bottom: 0;
-    position: absolute;
-    margin: 1rem;
     background-color: #101827 !important;
-    width: 100%;
-
 
     .input-group {
-      width: 95%;
 
       .btn {
         background-color: #0d6efd;
@@ -160,6 +151,13 @@ h5 {
   margin: 0 auto;
   border-radius: 0.25rem;
   padding: 1rem;
+}
+
+.messages-section {
+  overflow-y: scroll;
+  scrollbar-color: #0d6efd transparent;
+  scrollbar-width: thin;
+  height: 90%;
 }
 
 .list-group-item {
