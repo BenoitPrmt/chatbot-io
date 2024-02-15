@@ -2,7 +2,6 @@
 * {
   margin: 0;
   padding: 0;
-  color: #fff;
   font-family: "Work Sans", sans-serif;
   scroll-behavior: smooth;
 }
@@ -73,7 +72,7 @@ h5 {
   transition: 0.5s;
 }
 .right-side h5:hover {
-  color: #0d6efd;
+  color: #0d6efd !important;
   letter-spacing: 2px;
 }
 .right-side .card {
@@ -113,7 +112,7 @@ h5 {
   list-style: none;
 }
 .left-side li:hover {
-  background-color: #0d6efd;
+  background-color: #0d6efd !important;
   transition: background-color 0.2s linear;
 }
 .left-side li:hover h5 {
@@ -135,9 +134,14 @@ h5 {
   scrollbar-width: thin;
   height: 90%;
 }
+.messages-section .left-body {
+  border-radius: 0.8rem 0.8rem 0.8rem 0;
+}
+.messages-section .right-body {
+  border-radius: 0.8rem 0.8rem 0 0.8rem;
+}
 
 .list-group-item {
-  background-color: #FFF;
   border-radius: 0.25rem;
 }
 
@@ -155,11 +159,12 @@ h5 {
   color: white !important;
 }
 
+.input-group {
+  padding-left: 1rem;
+}
 .input-group input {
-  border: none;
   border-radius: 0.25rem;
-  padding: 0.5rem 1rem;
-  color: #FFF;
+  color: #6c757d;
   font-size: 0.8em;
   transition: 0.5s;
 }
