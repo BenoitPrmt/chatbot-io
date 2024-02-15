@@ -19,15 +19,15 @@ nav {
   border-bottom: 1px solid #e5e7eb4c !important;
 
   img {
-    width: 3em;
+    width: 2.6em;
     transition: 0.5s;
 
     &:hover {
-      -webkit-transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
-      -moz-transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
-      -ms-transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
-      -o-transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
-      transform: scale(1.2) rotate(20deg) translate(-10px, 0px);
+      -webkit-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
+      -moz-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
+      -ms-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
+      -o-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
+      transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
     }
   }
 
@@ -49,13 +49,17 @@ nav {
 .nav-link {
   text-decoration: none;
   color: grey !important;
-  font-size: 1.5em;
+  font-size: 1.2em;
   transition: 0.3s !important;
 
   &:hover {
     transform: translateY(-5px);
     color: #0d6efd !important;
   }
+}
+
+h5 {
+  font-size: 1.2rem;
 }
 
 .left-side,
@@ -66,14 +70,15 @@ nav {
 
 .right-side {
   overflow-y: scroll;
+  scrollbar-color: #0d6efd transparent;
+  scrollbar-width: thin;
   margin-bottom: 12px;
-  height: 80vh;
+  height: 75vh;
   transition: 0.5s;
 
   h5 {
     letter-spacing: 1px;
     margin-top: 5px;
-    font-size: 1.5rem;
     font-weight: 400;
     cursor: pointer;
     transition: 0.5s;
@@ -173,6 +178,22 @@ nav {
   }
 }
 
+.input-group {
+
+  input {
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    color: #FFF;
+    font-size: 0.8em;
+    transition: 0.5s;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
 // TODO: À MODIFIER
 
 .avatar {
@@ -181,7 +202,25 @@ nav {
 }
 
 @media (max-width: 768px) {
-  .list-group-item h5 {
-    font-size: 1rem;
+  .chat {
+    h3 {
+      font-size: 1rem;
+    }
   }
+
+  .list-group-item {
+    h5 {
+      display: none;
+    }
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  p {
+    font-size: 0.8em;
+  }
+
 }
