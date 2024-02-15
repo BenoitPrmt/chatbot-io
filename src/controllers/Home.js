@@ -44,7 +44,7 @@ const Home = class {
   }
 
   scrollToBottom() {
-    const elRightSide = document.querySelector('.right-side');
+    const elRightSide = document.querySelector('.messages-section');
     elRightSide.scrollTo(0, elRightSide.scrollHeight);
   }
 

@@ -61,12 +61,9 @@ h5 {
 }
 
 .right-side {
-  overflow-y: scroll;
-  scrollbar-color: #0d6efd transparent;
-  scrollbar-width: thin;
   margin-bottom: 12px;
-  height: 75vh;
   transition: 0.5s;
+  height: 75vh;
 }
 .right-side h5 {
   letter-spacing: 1px;
@@ -84,10 +81,7 @@ h5 {
 }
 .right-side .messages {
   bottom: 0;
-  position: sticky;
-}
-.right-side .messages .input-group {
-  margin-bottom: 12px;
+  background-color: #101827 !important;
 }
 .right-side .messages .input-group .btn {
   background-color: #0d6efd;
@@ -133,6 +127,13 @@ h5 {
   margin: 0 auto;
   border-radius: 0.25rem;
   padding: 1rem;
+}
+
+.messages-section {
+  overflow-y: scroll;
+  scrollbar-color: #0d6efd transparent;
+  scrollbar-width: thin;
+  height: 90%;
 }
 
 .list-group-item {
