@@ -4,7 +4,6 @@
 * {
   margin: 0;
   padding: 0;
-  color: #fff;
   font-family: "Work Sans", sans-serif;
   scroll-behavior: smooth;
 }
@@ -82,7 +81,7 @@ h5 {
 
 
     &:hover {
-      color: #0d6efd;
+      color: #0d6efd !important;
       letter-spacing: 2px;
     }
   }
@@ -134,7 +133,7 @@ h5 {
 
 
     &:hover {
-      background-color: #0d6efd;
+      background-color: #0d6efd !important;
       transition: background-color 0.2s linear;
     }
 
@@ -158,10 +157,17 @@ h5 {
   scrollbar-color: #0d6efd transparent;
   scrollbar-width: thin;
   height: 90%;
+
+  .left-body {
+    border-radius: 0.8rem 0.8rem 0.8rem 0;
+  }
+
+  .right-body {
+    border-radius: 0.8rem 0.8rem 0 0.8rem;
+  }
 }
 
 .list-group-item {
-  background-color: #FFF;
   border-radius: 0.25rem;
 }
 

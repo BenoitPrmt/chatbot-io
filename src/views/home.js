@@ -3,7 +3,7 @@ export default () => (`
       <div class="col-3 left-side">
         <h3 class="text-light">Bots' Name</h3>
         <ul class="list-group gap-3 pt-3 col-11">
-          <li class="list-group-item">
+          <li class="list-group-item bg-light">
             <div class="d-flex flex-column flex-lg-row gap-3 align-items-center">
               <img class="avatar rounded-circle"
                            src="https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2022/12/tortue-marine-scaled.jpg"
@@ -12,7 +12,7 @@ export default () => (`
             </div>
           </li>
           
-          <li class="list-group-item">
+          <li class="list-group-item bg-light">
             <div class="d-flex flex-column flex-lg-row gap-3 align-items-center">
               <img class="avatar rounded-circle"
                            src="https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2022/12/tortue-marine-scaled.jpg"
@@ -21,7 +21,7 @@ export default () => (`
             </div>
           </li>
           
-          <li class="list-group-item">
+          <li class="list-group-item bg-light">
             <div class="d-flex flex-column flex-lg-row gap-3 align-items-center">
               <img class="avatar rounded-circle"
                            src="https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2022/12/tortue-marine-scaled.jpg"
@@ -30,7 +30,7 @@ export default () => (`
             </div>
           </li>
           
-          <li class="list-group-item">
+          <li class="list-group-item bg-light">
             <div class="d-flex flex-column flex-lg-row gap-3 align-items-center">
               <img class="avatar rounded-circle"
                            src="https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2022/12/tortue-marine-scaled.jpg"
