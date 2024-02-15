@@ -4,5 +4,18 @@
     "bots": "all",
     "response": "Bonjour {{user}}, ça va ?",
     "useAPI": false
+  },
+  {
+    "command": "jedi",
+    "bots": 3,
+    "response": "Un jedi je suis",
+    "useAPI": false
+  },
+  {
+    "command": "meteo",
+    "bots": 4,
+    "response": "Il fait actuellement {{data}}°C?",
+    "useAPI": true,
+    "endpoint" : ""
   }
 ]

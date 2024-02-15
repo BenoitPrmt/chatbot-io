@@ -1,12 +1,10 @@
 import viewNav from '../views/nav';
-import viewHome from '../views/home';
-import Chat from './Chat';
+import viewWelcome from '../views/welcome';
 
-const Home = class {
+const Commands = class {
   constructor(params) {
     this.el = document.querySelector('#root');
     this.params = params;
-    this.messages = [];
 
     this.run();
   }
@@ -16,17 +14,15 @@ const Home = class {
         <div class="row">
           <div class="col-12">${viewNav()}</div>
         </div>
-    <div class="container-fluid pt-4">
-        ${viewHome()}
+    <div class="container pt-4">
+        ${viewWelcome()}
     </div>
     `;
   }
 
   run() {
     this.el.innerHTML = this.render();
-
-    new Chat();
   }
 };
 
-export default Home;
+export default Commands;

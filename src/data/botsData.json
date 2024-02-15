@@ -2,16 +2,21 @@
   {
     "id": 1,
     "name": "Dark Vador",
-    "avatar": ""
+    "avatar": "https://source.boringavatars.com/"
   },
   {
     "id": 2,
     "name": "Dark Sidious",
-    "avatar": ""
+    "avatar": "https://source.boringavatars.com/"
   },
   {
     "id": 3,
-    "name": "Obi-Wan",
-    "avatar": ""
+    "name": "Yoda",
+    "avatar": "https://fr.web.img4.acsta.net/r_1280_720/newsv7/21/06/23/11/44/3625774.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Evelyne Dehliat",
+    "avatar": "https://source.boringavatars.com/"
   }
 ]
