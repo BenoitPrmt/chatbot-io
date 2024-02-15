@@ -75,6 +75,7 @@ h5 {
   margin-bottom: 12px;
   height: 75vh;
   transition: 0.5s;
+  position: relative;
 
   h5 {
     letter-spacing: 1px;
@@ -96,10 +97,14 @@ h5 {
 
   .messages {
     bottom: 0;
-    position: sticky;
+    position: absolute;
+    margin: 1rem;
+    background-color: #101827 !important;
+    width: 100%;
+
 
     .input-group {
-      margin-bottom: 12px;
+      width: 95%;
 
       .btn {
         background-color: #0d6efd;
