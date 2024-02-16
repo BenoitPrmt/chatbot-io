@@ -11,8 +11,8 @@ export default (data) => {
   ${date.toLocaleTimeString()} | 
   ${date.getUTCDate()}-${date.getUTCMonth() + 1}-${date.getUTCFullYear()}
   `;
-  const position = sender === localStorage.getItem('username') ? 'justify-content-end' : 'justify-content-start';
-  const classPosition = sender === localStorage.getItem('username') ? 'right-body' : 'left-body';
+  const position = sender === localStorage.getItem('username').replace(/"/g, '') ? 'justify-content-end' : 'justify-content-start';
+  const classPosition = sender === localStorage.getItem('username').replace(/"/g, '') ? 'right-body' : 'left-body';
 
   return `
     <div class="d-flex ${position}">
