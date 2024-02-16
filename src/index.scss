@@ -75,6 +75,7 @@ h5 {
   .avatar {
     width: 40px;
     height: 40px;
+    object-fit: cover;
   }
 
   h5 {
@@ -151,6 +152,15 @@ h5 {
       color: #FFF !important;
       transition: color 0.2s linear;
     }
+
+    /* img {
+      filter: grayscale(50%);
+
+    }
+
+    &:hover img {
+      filter: grayscale(0%);
+    } */
   }
 }
 
