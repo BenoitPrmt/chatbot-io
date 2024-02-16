@@ -1,43 +1,12 @@
+import homeBotList from './homeBotList';
+import entities from '../data/entitiesData';
+
 export default () => (`
     <section class="row chat">
       <div class="col-3 left-side">
         <h3 class="text-light">Bots' Name</h3>
         <ul class="list-group gap-3 pt-3 col-11">
-          <li class="list-group-item bg-light">
-            <div class="d-flex flex-column flex-lg-row gap-3 align-items-center">
-              <img class="avatar rounded-circle"
-                           src="https://source.boringavatars.com/"
-                           alt="">
-              <h5 class="text-black pt-0 pt-lg-1">Bot 1</h5>
-            </div>
-          </li>
-          
-          <li class="list-group-item bg-light">
-            <div class="d-flex flex-column flex-lg-row gap-3 align-items-center">
-              <img class="avatar rounded-circle"
-                           src="https://source.boringavatars.com/"
-                           alt="">
-              <h5 class="text-black pt-0 pt-lg-1">Bot 2</h5>
-            </div>
-          </li>
-          
-          <li class="list-group-item bg-light">
-            <div class="d-flex flex-column flex-lg-row gap-3 align-items-center">
-              <img class="avatar rounded-circle"
-                           src="https://source.boringavatars.com/"
-                           alt="">
-              <h5 class="text-black pt-0 pt-lg-1">Bot 3</h5>
-            </div>
-          </li>
-          
-          <li class="list-group-item bg-light">
-            <div class="d-flex flex-column flex-lg-row gap-3 align-items-center">
-              <img class="avatar rounded-circle"
-                           src="https://source.boringavatars.com/"
-                           alt="">
-              <h5 class="text-black pt-0 pt-lg-1">Bot 4</h5>
-            </div>
-          </li>
+        ${entities.map((bot) => homeBotList(bot)).join('')}
         </ul>
       </div>
       
