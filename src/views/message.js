@@ -7,9 +7,10 @@ export default (data) => {
     avatar,
     date
   } = data;
+  const dateObject = new Date(date);
   const formattedDate = `
-  ${date.getUTCDate()}-${date.getUTCMonth() + 1}-${date.getUTCFullYear()}
-  at ${date.toLocaleTimeString()}
+  ${dateObject.getUTCDate()}-${dateObject.getUTCMonth() + 1}-${dateObject.getUTCFullYear()}
+  at ${dateObject.toLocaleTimeString()}
   `;
   const position = sender === localStorage.getItem('username').replace(/"/g, '') ? 'justify-content-end' : 'justify-content-start';
   const classPosition = sender === localStorage.getItem('username').replace(/"/g, '') ? 'right-body' : 'left-body';

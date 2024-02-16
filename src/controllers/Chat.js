@@ -1,5 +1,4 @@
 import viewMessage from '../views/message';
-// import Commands from './Commands';
 
 import Bot from '../models/bots/index';
 import entities from '../data/entitiesData';
@@ -7,10 +6,11 @@ import entities from '../data/entitiesData';
 const Chat = class {
   constructor() {
     this.el = document.querySelector('.messages-section');
-
-    this.messages = [];
     this.bots = entities.map((entity) => new Bot(entity));
-    this.username = localStorage.getItem('username').replace(/"/g, '');
+    this.username = localStorage.getItem('username')
+      .replace(/"/g, '');
+
+    this.showOldMessages();
 
     this.scrollToBottom();
 
@@ -32,20 +32,21 @@ const Chat = class {
     const args = messageWords.slice(1) || [];
 
     this.bots.forEach((bot) => {
-      bot.runAction(prefix, args).then((botResponse) => {
-        if (botResponse) {
-          this.sendMessage(
-            {
-              sender: bot.entity.name,
-              receiver: this.username,
-              date: new Date(),
-              content: botResponse.message,
-              image: botResponse.image || null,
-              avatar: bot.entity.avatar
-            }
-          );
-        }
-      });
+      bot.runAction(prefix, args)
+        .then((botResponse) => {
+          if (botResponse) {
+            this.sendMessage(
+              {
+                sender: bot.entity.name,
+                receiver: this.username,
+                date: new Date(),
+                content: botResponse.message,
+                image: botResponse.image || null,
+                avatar: bot.entity.avatar
+              }
+            );
+          }
+        });
     });
   }
 
@@ -65,9 +66,14 @@ const Chat = class {
     elInputMessageContent.value = '';
   }
 
-  sendMessage(messageData) {
+  sendMessage(messageData, archiveMessage = false) {
     const {
-      sender, receiver, date, content, image, avatar
+      sender,
+      receiver,
+      date,
+      content,
+      image,
+      avatar
     } = messageData;
 
     const messageToSend = {
@@ -79,21 +85,21 @@ const Chat = class {
       avatar
     };
 
-    this.messages.push(messageToSend);
-    this.updateLocalStorage(messageToSend);
+    if (!archiveMessage) {
+      this.updateLocalStorage(messageToSend);
 
-    this.run(messageToSend);
-
-    if (messageToSend.sender === this.username) {
-      this.checkIfCommand(messageToSend);
+      if (messageToSend.sender === this.username) {
+        this.checkIfCommand(messageToSend);
+      }
     }
 
+    this.run(messageToSend);
     this.scrollToBottom();
   }
 
   updateLocalStorage(newData) {
-    let data = localStorage.getItem('messages') || '[]';
-    data = JSON.parse(data);
+    const data = JSON.parse(localStorage.getItem('messages') || '[]');
+    if (data.length > 50) data.shift();
 
     if (!data.includes(newData)) {
       data.push(newData);
@@ -107,7 +113,7 @@ const Chat = class {
     data = JSON.parse(data);
 
     data.forEach((message) => {
-      this.sendMessage(message);
+      this.sendMessage(message, true);
     });
   }
 

@@ -20,6 +20,10 @@ nav img {
   transition: 0.5s;
 }
 nav img:hover {
+  -webkit-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
+  -moz-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
+  -ms-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
+  -o-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
   transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
 }
 nav button {
@@ -110,9 +114,7 @@ h5 {
 .left-side li {
   list-style: none;
   transition: background-color 0.2s linear, transform 0.2s linear;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   /* img {
     filter: grayscale(50%);
 
@@ -203,8 +205,7 @@ h5 {
 .avatar {
   width: 50px;
   height: 50px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .login {
@@ -227,4 +228,6 @@ h5 {
   p {
     font-size: 0.8em;
   }
-}/*# sourceMappingURL=index.css.map */
+}
+
+/*# sourceMappingURL=index.css.map */
