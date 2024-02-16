@@ -11,8 +11,17 @@ const pokemonAction = {
         method: 'GET',
         headers
       });
-      const { name: { en }, sprites: { regular } } = await response.json();
-      return `Infos on ${en} (<img width="35px" height="35px" class="mb-2" src=${regular}>)`;
+      const {
+        name: { en },
+        sprites: { regular },
+        pokedexId,
+        generation,
+        types
+      } = await response.json();
+      return {
+        message: `Infos on ${en} | ${types.map((type) => `<img width="35px" height="35px" class="mb-2 rounded-circle" src=${type.image}>`).join(' ')}<br>Pokedex ID: ${pokedexId}<br>Generation: ${generation}`,
+        image: regular
+      };
     } catch (error) {
       return error;
     }

@@ -39,8 +39,8 @@ const Chat = class {
               sender: bot.entity.name,
               receiver: this.username,
               date: new Date(),
-              content: botResponse,
-              image: null,
+              content: botResponse.message,
+              image: botResponse.image || null,
               avatar: bot.entity.avatar
             }
           );
