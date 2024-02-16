@@ -1,14 +1,16 @@
 import viewMessage from '../views/message';
-import botsData from '../data/botsData.json';
-import Commands from './Commands';
-// import commandsData from '../data/commandsData.json';
+// import Commands from './Commands';
+
+import Bot from '../models/bots/index';
+import entities from '../data/entitiesData';
 
 const Chat = class {
   constructor() {
     this.el = document.querySelector('.messages-section');
 
     this.messages = [];
-    this.bots = botsData;
+    this.bots = entities.map((entity) => new Bot(entity));
+    this.username = 'User';
 
     this.scrollToBottom();
 
@@ -24,16 +26,39 @@ const Chat = class {
     });
   }
 
+  checkIfCommand(message) {
+    const messageWords = message.content.split(' ');
+    const prefix = messageWords[0];
+    // const args = messageWords.slice(1);
+
+    this.bots.forEach((bot) => {
+      const botResponse = bot.runAction(prefix);
+      if (botResponse) {
+        this.sendMessage(
+          {
+            sender: bot.entity.name,
+            receiver: this.username,
+            date: new Date(),
+            content: botResponse,
+            image: null,
+            avatar: bot.entity.avatar
+          }
+        );
+      }
+    });
+  }
+
   userSendMessage() {
     const elInputMessageContent = document.querySelector('.input-message-content');
 
     if (elInputMessageContent.value.length === 0) return;
 
     this.sendMessage({
-      sender: 'User',
+      sender: this.username,
       receiver: 'Bot',
       date: new Date(),
       content: elInputMessageContent.value,
+      image: null,
       avatar: 'https://source.boringavatars.com/'
     });
     elInputMessageContent.value = '';
@@ -41,7 +66,7 @@ const Chat = class {
 
   sendMessage(messageData) {
     const {
-      sender, receiver, date, content, avatar
+      sender, receiver, date, content, image, avatar
     } = messageData;
 
     const messageToSend = {
@@ -49,6 +74,7 @@ const Chat = class {
       receiver,
       date,
       content,
+      image,
       avatar
     };
 
@@ -57,8 +83,9 @@ const Chat = class {
 
     this.run(messageToSend);
 
-    // Check if this message is a command
-    new Commands(this, messageToSend);
+    if (messageToSend.sender === this.username) {
+      this.checkIfCommand(messageToSend);
+    }
 
     this.scrollToBottom();
   }

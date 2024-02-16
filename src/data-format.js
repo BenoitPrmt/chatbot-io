@@ -1,6 +1,6 @@
 const messages = [
   {
-    sender: 'Bot 1',
+    sender: 'Index 1',
     receiver: 'User',
     date: new Date(),
     content: 'Hello World!'
