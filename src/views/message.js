@@ -4,8 +4,13 @@ export default (data) => {
   const {
     sender,
     content,
-    avatar
+    avatar,
+    date
   } = data;
+  const formattedDate = `
+  ${date.toLocaleTimeString()} | 
+  ${date.getUTCDate()}-${date.getUTCMonth() + 1}-${date.getUTCFullYear()}
+  `;
   const position = sender === 'User' ? 'justify-content-end' : 'justify-content-start';
   const classPosition = sender === 'User' ? 'right-body' : 'left-body';
 
@@ -18,7 +23,8 @@ export default (data) => {
         <div class="card-body bg-light text-black ${classPosition}">
             <p class="card-text">${content}</p>
         </div>
-      </div >
+        <small class="text-muted pt-1">${formattedDate}</small>
+      </div>
     </div >
       `;
 };

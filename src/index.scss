@@ -92,8 +92,10 @@ h5 {
     }
   }
 
+
   .card {
     color: #0d6efd;
+    width: 30%;
   }
 
   .messages {
@@ -213,7 +215,20 @@ h5 {
 
   &:hover {
     transform: translateY(-5px);
+
   }
+
+}
+
+
+.card:hover .text-muted {
+  display: flex;
+  opacity: 1;
+}
+
+.text-muted {
+  opacity: 0;
+  transition: 0.7s;
 }
 
 .input-group {
