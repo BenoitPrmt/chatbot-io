@@ -22,15 +22,14 @@ const Router = class {
 
       if (route.url === this.path) {
         // 👇 Comment to avoid redirection when not logged
-        // if (route.private) {
-        //   const token = localStorage.getItem('authToken');
-        //
-        //   if (!token) {
-        //     window.location.href = '/welcome';
-        //
-        //     break;
-        //   }
-        // }
+        if (route.private) {
+          const token = localStorage.getItem('authToken');
+
+          if (!token) {
+            window.location.href = '/welcome';
+            break;
+          }
+        }
 
         const Controller = route.controller;
         new Controller(this.params);

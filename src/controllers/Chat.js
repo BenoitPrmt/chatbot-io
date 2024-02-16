@@ -10,7 +10,7 @@ const Chat = class {
 
     this.messages = [];
     this.bots = entities.map((entity) => new Bot(entity));
-    this.username = 'User';
+    this.username = localStorage.getItem('username');
 
     this.scrollToBottom();
 
