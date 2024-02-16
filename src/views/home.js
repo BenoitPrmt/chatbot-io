@@ -6,7 +6,7 @@ export default () => (`
           <li class="list-group-item bg-light">
             <div class="d-flex flex-column flex-lg-row gap-3 align-items-center">
               <img class="avatar rounded-circle"
-                           src="https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2022/12/tortue-marine-scaled.jpg"
+                           src="https://source.boringavatars.com/"
                            alt="">
               <h5 class="text-black pt-0 pt-lg-1">Bot 1</h5>
             </div>
@@ -15,27 +15,27 @@ export default () => (`
           <li class="list-group-item bg-light">
             <div class="d-flex flex-column flex-lg-row gap-3 align-items-center">
               <img class="avatar rounded-circle"
-                           src="https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2022/12/tortue-marine-scaled.jpg"
+                           src="https://source.boringavatars.com/"
                            alt="">
-              <h5 class="text-black pt-0 pt-lg-1">Bot 1</h5>
+              <h5 class="text-black pt-0 pt-lg-1">Bot 2</h5>
             </div>
           </li>
           
           <li class="list-group-item bg-light">
             <div class="d-flex flex-column flex-lg-row gap-3 align-items-center">
               <img class="avatar rounded-circle"
-                           src="https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2022/12/tortue-marine-scaled.jpg"
+                           src="https://source.boringavatars.com/"
                            alt="">
-              <h5 class="text-black pt-0 pt-lg-1">Bot 1</h5>
+              <h5 class="text-black pt-0 pt-lg-1">Bot 3</h5>
             </div>
           </li>
           
           <li class="list-group-item bg-light">
             <div class="d-flex flex-column flex-lg-row gap-3 align-items-center">
               <img class="avatar rounded-circle"
-                           src="https://www.science-et-vie.com/wp-content/uploads/scienceetvie/2022/12/tortue-marine-scaled.jpg"
+                           src="https://source.boringavatars.com/"
                            alt="">
-              <h5 class="text-black pt-0 pt-lg-1">Bot 1</h5>
+              <h5 class="text-black pt-0 pt-lg-1">Bot 4</h5>
             </div>
           </li>
         </ul>
