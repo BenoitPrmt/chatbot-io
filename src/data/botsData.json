@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Dark Vador",
+    "avatar": "https://pbs.twimg.com/media/FQZoGQGXwAMgipO.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Dark Sidious",
+    "avatar": "https://static.tvtropes.org/pmwiki/pub/images/lsw_profileicons_darthsidious_ep9_reborn.png"
+  },
+  {
+    "id": 3,
+    "name": "Yoda",
+    "avatar": "https://i.pinimg.com/originals/17/e9/36/17e9364dcdde9651c7be09e9bee4db47.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Evelyne Dehliat",
+    "avatar": "https://www.gala.fr/imgre/fit/~1~gal~2023~10~02~c259200d-c07b-45a2-94bc-b2b9c289807b.jpeg/2671x1914/quality/80/evelyne-dheliat.jpeg"
+  },
+  {
+    "id": 5,
+    "name": "Professeur Chen",
+    "avatar": "https://cdn.discordapp.com/attachments/810585716580810752/1207976431242584074/1000.png?ex=65e19ab8&is=65cf25b8&hm=c063310283d53809a027f937edb0898e8a21156deae35f4fcc34c72eb8e755c5&"
+  },
+  {
+    "id": 6,
+    "name": "Woody",
+    "avatar": "https://static.voices.com/wp-content/uploads/2022/10/open-uri20150422-20810-10n7ovy_9b42e613-e1668010464234.jpeg"
+  }
+]
