@@ -2,6 +2,7 @@ import messageHeader from './messageHeader';
 
 export default (data) => {
   const {
+    id,
     sender,
     content,
     avatar,
@@ -16,7 +17,7 @@ export default (data) => {
   const classPosition = sender === localStorage.getItem('username').replace(/"/g, '') ? 'right-body' : 'left-body';
 
   return `
-    <div class="d-flex ${position}">
+    <div class="d-flex ${position}" message-id="${id}">
       <div class="card">
         <div class="card-header ${position}">
         ${messageHeader(position, sender, avatar)} 

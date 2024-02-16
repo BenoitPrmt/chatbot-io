@@ -77,6 +77,7 @@ const Chat = class {
     } = messageData;
 
     const messageToSend = {
+      id: `id${Math.random().toString(16).slice(2)}`,
       sender,
       receiver,
       date,
