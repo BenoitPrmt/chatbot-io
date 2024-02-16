@@ -29,22 +29,23 @@ const Chat = class {
   checkIfCommand(message) {
     const messageWords = message.content.split(' ');
     const prefix = messageWords[0];
-    // const args = messageWords.slice(1);
+    const args = messageWords.slice(1) || [];
 
     this.bots.forEach((bot) => {
-      const botResponse = bot.runAction(prefix);
-      if (botResponse) {
-        this.sendMessage(
-          {
-            sender: bot.entity.name,
-            receiver: this.username,
-            date: new Date(),
-            content: botResponse,
-            image: null,
-            avatar: bot.entity.avatar
-          }
-        );
-      }
+      bot.runAction(prefix, args).then((botResponse) => {
+        if (botResponse) {
+          this.sendMessage(
+            {
+              sender: bot.entity.name,
+              receiver: this.username,
+              date: new Date(),
+              content: botResponse,
+              image: null,
+              avatar: bot.entity.avatar
+            }
+          );
+        }
+      });
     });
   }
 

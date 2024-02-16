@@ -1,6 +1,7 @@
 const pokemonAction = {
   name: 'pokemon',
   words: ['pokemon', 'poke'],
+  args: ['pokemon_name'],
   action: async (args) => {
     const headers = {
       Accept: 'application/json'
