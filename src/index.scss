@@ -13,6 +13,7 @@ body {
   overflow-x: hidden;
 }
 
+
 nav {
   align-items: center;
   border-bottom: 1px solid #e5e7eb4c !important;
@@ -195,6 +196,7 @@ h5 {
 .card {
   background-color: #101827;
   padding: 1rem;
+  transition: 0.5s;
 
   .card-header {
     gap: 10px;
@@ -205,6 +207,10 @@ h5 {
   .btn {
     background-color: #0d6efd !important;
     color: white !important;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
   }
 }
 
