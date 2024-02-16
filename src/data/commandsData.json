@@ -25,7 +25,7 @@
       }
     ],
     "useAPI": true,
-    "endpoint" : ""
+    "endpoint": ""
   },
   {
     "command": "pokemon",
@@ -41,5 +41,12 @@
     ],
     "useAPI": true,
     "endpoint": "https://tyradex.tech/api/v1/pokemon/"
+  },
+  {
+    "command": "bot",
+    "bots": 6,
+    "response": "J'ai un serpent dans ma bot(te)",
+    "returnArgs": 0,
+    "useAPI": false
   }
 ]

@@ -12,6 +12,7 @@ const Welcome = class {
   submitWelcome(data) {
     if (data) {
       localStorage.setItem('username', JSON.stringify(data));
+      localStorage.setItem('authToken', JSON.stringify(data));
       window.location.href = '/';
     } else {
       window.location.href = '/welcome';

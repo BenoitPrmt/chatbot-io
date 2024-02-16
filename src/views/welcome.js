@@ -8,7 +8,7 @@ export default () => (`
         <input type="text" class="form-control input-message-content" placeholder="Enter your username..." aria-label="Enter your username..."
                      aria-describedby="button-addon2">
     </div>
-    <button class="btn btn-primary mt-2" type="submit" onClick="this.submitWelcome(document.querySelector('input').value)">Chat with bots</button>
+    <button class="btn btn-primary mt-2" type="submit" onclick=${this.submitWelcome(document.querySelector('input').value)}>Chat with bots</button>
     </div>
     </div>
 `);

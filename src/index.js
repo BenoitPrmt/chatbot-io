@@ -7,11 +7,13 @@ import './index.scss';
 const routes = [
   {
     url: '/',
-    controller: Home
+    controller: Home,
+    private: true
   },
   {
     url: '/bots',
-    controller: Bots
+    controller: Bots,
+    private: true
   },
   {
     url: '/welcome',
