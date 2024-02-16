@@ -2,9 +2,12 @@ export default () => {
   const submitWelcome = (username) => {
     if (username) {
       localStorage.setItem('username', JSON.stringify(username));
-      localStorage.setItem('authToken', JSON.stringify(
+      // 👇 Uncomment this to add to localStorage a token
+
+      /* localStorage.setItem('authToken', JSON.stringify(
         Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
-      ));
+      )); */
+
       window.location.href = '/';
     }
   };
