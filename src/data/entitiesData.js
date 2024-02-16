@@ -1,6 +1,7 @@
 import helloAction from '../models/bots/actions/hello';
 import jediAction from '../models/bots/actions/jedi';
 import pokemonAction from '../models/bots/actions/pokemon';
+import serpentAction from '../models/bots/actions/botte';
 
 const entities = [
   {
@@ -35,6 +36,15 @@ const entities = [
     actions: [
       helloAction,
       pokemonAction
+    ]
+  },
+  {
+    name: 'Woody',
+    description: 'Il a un serpent dans sa botte',
+    avatar: 'https://static.voices.com/wp-content/uploads/2022/10/open-uri20150422-20810-10n7ovy_9b42e613-e1668010464234.jpeg',
+    actions: [
+      helloAction,
+      serpentAction
     ]
   }
 ];
