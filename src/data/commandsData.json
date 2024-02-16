@@ -2,20 +2,44 @@
   {
     "command": "hello",
     "bots": "all",
-    "response": "Bonjour {{user}}, ça va ?",
+    "response": "Bonjour {{data-0}}, ça va ?",
+    "returnArgs": 1,
     "useAPI": false
   },
   {
     "command": "jedi",
     "bots": 3,
     "response": "Un jedi je suis",
+    "returnArgs": 0,
     "useAPI": false
   },
   {
     "command": "meteo",
     "bots": 4,
-    "response": "Il fait actuellement {{data}}°C?",
+    "response": "Il fait actuellement {{data-0}}°C?",
+    "returnArgs": 1,
+    "args": [
+      {
+        "name": "ville",
+        "required": true
+      }
+    ],
     "useAPI": true,
     "endpoint" : ""
+  },
+  {
+    "command": "pokemon",
+    "bots": 5,
+    "response": "Informations sur {{data-0}}",
+    "image": "{{data-1}}",
+    "returnArgs": 2,
+    "args": [
+      {
+        "name": "pokemon",
+        "required": true
+      }
+    ],
+    "useAPI": true,
+    "endpoint": "https://tyradex.tech/api/v1/pokemon/"
   }
 ]
