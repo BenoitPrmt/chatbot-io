@@ -2,7 +2,7 @@ const jediAction = {
   name: 'jedi',
   words: ['jedi'],
   args: [],
-  action: () => 'Un jedi, je suis'
+  action: () => 'A Jedi, I am 🥋'
 };
 
 export default jediAction;

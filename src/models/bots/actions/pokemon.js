@@ -11,8 +11,8 @@ const pokemonAction = {
         method: 'GET',
         headers
       });
-      const { name: { fr }, sprites: { regular } } = await response.json();
-      return `Informations sur ${fr} / ${regular}`;
+      const { name: { en }, sprites: { regular } } = await response.json();
+      return `Infos on ${en} (<img width="35px" height="35px" class="mb-2" src=${regular}>)`;
     } catch (error) {
       return error;
     }

@@ -1,8 +1,8 @@
 const serpentAction = {
   name: 'botte',
-  words: ['botte', 'bot'],
+  words: ['botte', 'bot', 'boot'],
   args: [],
-  action: () => 'J\'ai un serpent dans ma bot(te) ! 🐍'
+  action: () => 'There\'s a snake in my boot ! 🐍'
 };
 
 export default serpentAction;

@@ -1,8 +1,8 @@
 const helloAction = {
   name: 'hello',
-  words: ['hello', 'bonjour'],
+  words: ['hello', 'hi', 'bonjour', 'coucou', 'wesh'],
   args: [],
-  action: () => `Bonjour ${localStorage.getItem('username').replace(/"/g, '')} !`
+  action: () => `Hello ${localStorage.getItem('username').replace(/"/g, '')} !`
 };
 
 export default helloAction;
