@@ -23,9 +23,9 @@ const Router = class {
       if (route.url === this.path) {
         // 👇 Comment to avoid redirection when not logged
         if (route.private) {
-          const token = localStorage.getItem('authToken');
+          const username = localStorage.getItem('username');
 
-          if (!token) {
+          if (!username) {
             window.location.href = '/welcome';
             break;
           }

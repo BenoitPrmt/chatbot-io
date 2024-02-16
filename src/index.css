@@ -20,10 +20,6 @@ nav img {
   transition: 0.5s;
 }
 nav img:hover {
-  -webkit-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
-  -moz-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
-  -ms-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
-  -o-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
   transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
 }
 nav button {
@@ -114,7 +110,9 @@ h5 {
 .left-side li {
   list-style: none;
   transition: background-color 0.2s linear, transform 0.2s linear;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   /* img {
     filter: grayscale(50%);
 
@@ -205,7 +203,8 @@ h5 {
 .avatar {
   width: 50px;
   height: 50px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .login {
@@ -218,6 +217,30 @@ h5 {
   height: 200px;
 }
 
+.code-area {
+  position: absolute;
+  width: 320px;
+  min-width: 320px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.code-area > span {
+  display: block;
+}
+
+@media screen and (max-width: 320px) {
+  .code-area {
+    font-size: 5vw;
+    min-width: auto;
+    width: 95%;
+    margin: auto;
+    padding: 5px;
+    padding-left: 10px;
+    line-height: 6.5vw;
+  }
+}
 @media (max-width: 768px) {
   .chat h3 {
     font-size: 1rem;
@@ -228,6 +251,4 @@ h5 {
   p {
     font-size: 0.8em;
   }
-}
-
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */

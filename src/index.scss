@@ -261,6 +261,32 @@ h5 {
   height: 200px;
 }
 
+.code-area {
+  position: absolute;
+  width: 320px;
+  min-width: 320px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.code-area>span {
+  display: block;
+}
+
+@media screen and (max-width: 320px) {
+  .code-area {
+    font-size: 5vw;
+    min-width: auto;
+    width: 95%;
+    margin: auto;
+    padding: 5px;
+    padding-left: 10px;
+    line-height: 6.5vw;
+  }
+}
+
 @media (max-width: 768px) {
   .chat {
     h3 {
