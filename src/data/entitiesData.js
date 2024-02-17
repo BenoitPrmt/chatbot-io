@@ -5,8 +5,8 @@ import serpentAction from '../models/bots/actions/botte';
 
 const entities = [
   {
-    name: 'Bob',
-    description: 'I am bob',
+    name: 'Assistant',
+    description: 'I am an assistant to help you !',
     avatar: 'https://source.boringavatars.com/',
     actions: [
       helloAction
