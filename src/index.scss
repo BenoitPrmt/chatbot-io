@@ -218,6 +218,10 @@ h5 {
 
   }
 
+  * {
+    user-select: none;
+  }
+
 }
 
 
@@ -274,6 +278,11 @@ h5 {
 
 .code-area>span {
   display: block;
+}
+
+.card-bots:active {
+  transition: 0.2s;
+  transform: translateY(0px);
 }
 
 @media screen and (max-width: 320px) {
