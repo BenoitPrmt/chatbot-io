@@ -6,17 +6,17 @@ export default (data) => {
         <div class="card-body">
           <h5 class="card-title">${name}</h5>
           <p class="card-text">${description}</p>
-          <p class="card-text">Commands : ${actions.map(
+          <p class="card-text">Commands : <br>${actions.map(
     (action) => {
-      let valueToReturn = action.name;
+      let valueToReturn = `- ${action.name}`;
       action.args.forEach((arg) => {
         if (arg) {
-          valueToReturn = `${action.name} < ${arg} >`;
+          valueToReturn = `- ${action.name} <'${arg}'>`;
         }
       });
       return valueToReturn;
     }
-  ).join(' / ')}
+  ).join('<br>')}
   </p >
         </div >
       </div >
