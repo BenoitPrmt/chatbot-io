@@ -1,8 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 * {
   margin: 0;
   padding: 0;
-  font-family: "Work Sans", sans-serif;
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
   scroll-behavior: smooth;
 }
 
@@ -20,10 +21,6 @@ nav img {
   transition: 0.5s;
 }
 nav img:hover {
-  -webkit-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
-  -moz-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
-  -ms-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
-  -o-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
   transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
 }
 nav button {
@@ -114,7 +111,9 @@ h5 {
 .left-side li {
   list-style: none;
   transition: background-color 0.2s linear, transform 0.2s linear;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   /* img {
     filter: grayscale(50%);
 
@@ -181,6 +180,11 @@ h5 {
 .card:hover {
   transform: translateY(-5px);
 }
+.card * {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
 
 .card:hover .text-muted {
   display: flex;
@@ -205,7 +209,8 @@ h5 {
 .avatar {
   width: 50px;
   height: 50px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .login {
@@ -224,12 +229,16 @@ h5 {
   min-width: 320px;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
 .code-area > span {
   display: block;
+}
+
+.card-bots:active {
+  transition: 0.2s;
+  transform: translateY(0px);
 }
 
 @media screen and (max-width: 320px) {
@@ -253,6 +262,4 @@ h5 {
   p {
     font-size: 0.8em;
   }
-}
-
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */
