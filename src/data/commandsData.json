@@ -48,5 +48,19 @@
     "response": "J'ai un serpent dans ma bot(te)",
     "returnArgs": 0,
     "useAPI": false
+  },
+  {
+    "command": "sw",
+    "bots": 5,
+    "response": "Informations sur {{data-0}}",
+    "returnArgs": 2,
+    "args": [
+      {
+        "name": "character",
+        "required": true
+      }
+    ],
+    "useAPI": true,
+    "endpoint": "https://swapi.dev/api/"
   }
 ]

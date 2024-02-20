@@ -2,8 +2,12 @@ import helloAction from '../models/bots/actions/hello';
 import jediAction from '../models/bots/actions/jedi';
 import pokemonAction from '../models/bots/actions/pokemon';
 import serpentAction from '../models/bots/actions/botte';
+<<<<<<< HEAD
 import chuckAction from '../models/bots/actions/chuck';
 import parkingAction from '../models/bots/actions/parking';
+=======
+// import swAction from '../models/bots/actions/starwars';
+>>>>>>> 807190742875e2a9143ec36fcf6d808eb1c6bb63
 
 const entities = [
   {
@@ -59,6 +63,15 @@ const entities = [
       chuckAction
     ]
   }
+  // {
+  //   name: 'C-3PO',
+  //   description: 'A pleasure to meet you. I am C-3PO, Human-Cyborg Relations.',
+  //   avatar: 'https://lumiere-a.akamaihd.net/v1/images/c-3po-main_d6850e28.jpeg?region=242%2C0%2C716%2C536',
+  //   actions: [
+  //     helloAction,
+  //     swAction
+  //   ]
+  // }
 ];
 
 export default entities;
