@@ -6,7 +6,7 @@ export default (data) => {
         <div class="card-body">
           <h5 class="card-title">${name}</h5>
           <p class="card-text">${description}</p>
-          <p class="card-text">Commands : <br>${actions.map(
+          <p class="card-text">Commands : <br><span class="allowTextCopy">${actions.map(
     (action) => {
       let valueToReturn = `- ${action.name}`;
       action.args.forEach((arg) => {
@@ -17,6 +17,7 @@ export default (data) => {
       return valueToReturn;
     }
   ).join('<br>')}
+  </span>
   </p >
         </div >
       </div >
