@@ -24,6 +24,20 @@ const Chat = class {
         this.userSendMessage();
       }
     });
+
+    this.enableCommandHistory();
+  }
+
+  enableCommandHistory() {
+    const elInputField = document.querySelector('.input-message-content');
+    elInputField.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowUp') {
+        let data = JSON.parse(localStorage.getItem('messages') || '[]');
+        data = data.filter((message) => message.sender === this.username);
+        const lastMessage = data[data.length - 1];
+        elInputField.value = lastMessage.content;
+      }
+    });
   }
 
   checkIfCommand(message) {
