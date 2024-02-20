@@ -11,7 +11,7 @@ export default (data) => {
       let valueToReturn = `- ${action.name}`;
       action.args.forEach((arg) => {
         if (arg) {
-          valueToReturn = `- ${action.words[0]} <#${arg}>`;
+          valueToReturn += ` <#${arg}> `;
         }
       });
       return valueToReturn;
