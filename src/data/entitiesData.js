@@ -8,7 +8,7 @@ import headsOrTailsAction from '../models/bots/actions/headsOrTails';
 import shifumiAction from '../models/bots/actions/shifumi';
 import passwordAction from '../models/bots/actions/password';
 import weatherAction from '../models/bots/actions/weather';
-import chuckAction from '../models/bots/actions/chuck';
+import loveAction from '../models/bots/actions/love';
 
 const entities = [
   {
@@ -77,12 +77,12 @@ const entities = [
     ]
   },
   {
-    name: 'Chuck Norris',
-    description: 'I\'m the boss',
-    avatar: 'https://www.masculin.com/wp-content/uploads/sites/2/article/13438/chuck-norris.jpg',
+    name: 'Cupid',
+    description: 'I calculate your love percentage',
+    avatar: 'https://media.istockphoto.com/id/637985650/vector/cute-little-cupid-aiming-at-someone.jpg?s=612x612&w=0&k=20&c=o1Gi4i_kRZKzYKaA73zAjel9F0mNIEOnTKjvGOjZnbs=',
     actions: [
       helloAction,
-      chuckAction
+      loveAction
     ]
   }
 ];
