@@ -2,12 +2,9 @@ import helloAction from '../models/bots/actions/hello';
 import jediAction from '../models/bots/actions/jedi';
 import pokemonAction from '../models/bots/actions/pokemon';
 import serpentAction from '../models/bots/actions/botte';
-<<<<<<< HEAD
 import chuckAction from '../models/bots/actions/chuck';
 import parkingAction from '../models/bots/actions/parking';
-=======
 // import swAction from '../models/bots/actions/starwars';
->>>>>>> 807190742875e2a9143ec36fcf6d808eb1c6bb63
 
 const entities = [
   {
