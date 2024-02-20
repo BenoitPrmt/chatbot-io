@@ -3,7 +3,6 @@ const parkingAction = {
   words: ['parking'],
   args: ['parking_name'],
   action: async (args) => {
-    console.log(args.join(' '));
     const headers = {
       Accept: 'application/json'
     };

@@ -1,6 +1,6 @@
 const starWarsAction = {
-  name: 'StarWars',
-  words: ['sw', 'star-wars', 'Star-Wars', 'starWars'],
+  name: 'starwars',
+  words: ['sw', 'star-wars', 'starwars', 'Star-Wars', 'starWars'],
   args: ['character_name'],
   action: async (args) => {
     const headers = {

@@ -4,6 +4,8 @@ import pokemonAction from '../models/bots/actions/pokemon';
 import serpentAction from '../models/bots/actions/botte';
 import parkingAction from '../models/bots/actions/parking';
 import swAction from '../models/bots/actions/starwars';
+import headsOrTailsAction from '../models/bots/actions/headsOrTails';
+import shifumiAction from '../models/bots/actions/shifumi';
 
 const entities = [
   {
@@ -13,15 +15,6 @@ const entities = [
     actions: [
       helloAction,
       parkingAction
-    ]
-  },
-  {
-    name: 'Yoda',
-    description: 'Yoda, I am',
-    avatar: 'https://fr.web.img4.acsta.net/r_1280_720/newsv7/21/06/23/11/44/3625774.jpg',
-    actions: [
-      helloAction,
-      jediAction
     ]
   },
   {
@@ -42,12 +35,13 @@ const entities = [
     ]
   },
   {
-    name: 'Woody',
-    description: 'There\'s a snake in his boot',
-    avatar: 'https://static.voices.com/wp-content/uploads/2022/10/open-uri20150422-20810-10n7ovy_9b42e613-e1668010464234.jpeg',
+    name: 'Game Master',
+    description: 'I am the game master',
+    avatar: 'https://www.lagazettedescommunes.com/wp-content/uploads/2020/06/adobestock-309554820.jpeg',
     actions: [
       helloAction,
-      serpentAction
+      headsOrTailsAction,
+      shifumiAction
     ]
   },
   {
@@ -57,6 +51,24 @@ const entities = [
     actions: [
       helloAction,
       swAction
+    ]
+  },
+  {
+    name: 'Yoda',
+    description: 'Yoda, I am',
+    avatar: 'https://fr.web.img4.acsta.net/r_1280_720/newsv7/21/06/23/11/44/3625774.jpg',
+    actions: [
+      helloAction,
+      jediAction
+    ]
+  },
+  {
+    name: 'Woody',
+    description: 'There\'s a snake in his boot',
+    avatar: 'https://static.voices.com/wp-content/uploads/2022/10/open-uri20150422-20810-10n7ovy_9b42e613-e1668010464234.jpeg',
+    actions: [
+      helloAction,
+      serpentAction
     ]
   }
 ];
