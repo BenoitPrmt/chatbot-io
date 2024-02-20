@@ -289,6 +289,10 @@ h5 {
   transform: translateY(0px);
 }
 
+.allowTextCopy {
+  user-select: text;
+}
+
 @media screen and (max-width: 320px) {
   .code-area {
     font-size: 5vw;
