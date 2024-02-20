@@ -6,6 +6,7 @@ import parkingAction from '../models/bots/actions/parking';
 import swAction from '../models/bots/actions/starwars';
 import headsOrTailsAction from '../models/bots/actions/headsOrTails';
 import shifumiAction from '../models/bots/actions/shifumi';
+import passwordAction from '../models/bots/actions/password';
 
 const entities = [
   {
@@ -14,7 +15,8 @@ const entities = [
     avatar: 'https://source.boringavatars.com/',
     actions: [
       helloAction,
-      parkingAction
+      parkingAction,
+      passwordAction
     ]
   },
   {
