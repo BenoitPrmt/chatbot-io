@@ -7,6 +7,7 @@ import swAction from '../models/bots/actions/starwars';
 import headsOrTailsAction from '../models/bots/actions/headsOrTails';
 import shifumiAction from '../models/bots/actions/shifumi';
 import passwordAction from '../models/bots/actions/password';
+import weatherAction from '../models/bots/actions/weather';
 
 const entities = [
   {
@@ -24,7 +25,8 @@ const entities = [
     description: 'Miss météo',
     avatar: 'https://www.gala.fr/imgre/fit/~1~gal~2023~10~02~c259200d-c07b-45a2-94bc-b2b9c289807b.jpeg/2671x1914/quality/80/evelyne-dheliat.jpeg',
     actions: [
-      helloAction
+      helloAction,
+      weatherAction
     ]
   },
   {
