@@ -12,7 +12,7 @@ const passwordAction = {
       password.push(mdp);
     }
 
-    return { message: `🔐 Mot de passe généré :<br> <span class="allowTextCopy">${password.join(' ')}</span>` };
+    return { message: `🔐 Password generated :<br><span class="allowTextCopy">${password.join('')}</span>` };
   }
 };
 
