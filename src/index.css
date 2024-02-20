@@ -265,4 +265,7 @@ h5 {
   p {
     font-size: 0.8em;
   }
+  .right-side .card {
+    width: 100%;
+  }
 }/*# sourceMappingURL=index.css.map */

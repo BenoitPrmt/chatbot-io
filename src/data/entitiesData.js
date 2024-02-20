@@ -2,9 +2,8 @@ import helloAction from '../models/bots/actions/hello';
 import jediAction from '../models/bots/actions/jedi';
 import pokemonAction from '../models/bots/actions/pokemon';
 import serpentAction from '../models/bots/actions/botte';
-import chuckAction from '../models/bots/actions/chuck';
 import parkingAction from '../models/bots/actions/parking';
-// import swAction from '../models/bots/actions/starwars';
+import swAction from '../models/bots/actions/starwars';
 
 const entities = [
   {
@@ -52,23 +51,14 @@ const entities = [
     ]
   },
   {
-    name: 'Chuck Norris',
-    description: 'The legend',
-    avatar: 'https://www.masculin.com/wp-content/uploads/sites/2/article/13438/chuck-norris.jpg',
+    name: 'C-3PO',
+    description: 'A pleasure to meet you. I am C-3PO, Human-Cyborg Relations.',
+    avatar: 'https://lumiere-a.akamaihd.net/v1/images/c-3po-main_d6850e28.jpeg?region=242%2C0%2C716%2C536',
     actions: [
       helloAction,
-      chuckAction
+      swAction
     ]
   }
-  // {
-  //   name: 'C-3PO',
-  //   description: 'A pleasure to meet you. I am C-3PO, Human-Cyborg Relations.',
-  //   avatar: 'https://lumiere-a.akamaihd.net/v1/images/c-3po-main_d6850e28.jpeg?region=242%2C0%2C716%2C536',
-  //   actions: [
-  //     helloAction,
-  //     swAction
-  //   ]
-  // }
 ];
 
 export default entities;
