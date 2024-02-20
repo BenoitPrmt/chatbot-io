@@ -8,6 +8,7 @@ import headsOrTailsAction from '../models/bots/actions/headsOrTails';
 import shifumiAction from '../models/bots/actions/shifumi';
 import passwordAction from '../models/bots/actions/password';
 import weatherAction from '../models/bots/actions/weather';
+import chuckAction from '../models/bots/actions/chuck';
 
 const entities = [
   {
@@ -73,6 +74,15 @@ const entities = [
     actions: [
       helloAction,
       serpentAction
+    ]
+  },
+  {
+    name: 'Chuck Norris',
+    description: 'I\'m the boss',
+    avatar: 'https://www.masculin.com/wp-content/uploads/sites/2/article/13438/chuck-norris.jpg',
+    actions: [
+      helloAction,
+      chuckAction
     ]
   }
 ];
