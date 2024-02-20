@@ -4,9 +4,8 @@ import pokemonAction from '../models/bots/actions/pokemon';
 import serpentAction from '../models/bots/actions/botte';
 import parkingAction from '../models/bots/actions/parking';
 import swAction from '../models/bots/actions/starwars';
-import headsOrTailsAction from '../models/bots/actions/headsOrTails';
-import shifumiAction from '../models/bots/actions/shifumi';
-import passwordAction from '../models/bots/actions/password';
+// import footballAction from '../models/bots/actions/football';
+import loveAction from '../models/bots/actions/love';
 
 const entities = [
   {
@@ -15,8 +14,16 @@ const entities = [
     avatar: 'https://source.boringavatars.com/',
     actions: [
       helloAction,
-      parkingAction,
-      passwordAction
+      parkingAction
+    ]
+  },
+  {
+    name: 'Yoda',
+    description: 'Yoda, I am',
+    avatar: 'https://fr.web.img4.acsta.net/r_1280_720/newsv7/21/06/23/11/44/3625774.jpg',
+    actions: [
+      helloAction,
+      jediAction
     ]
   },
   {
@@ -37,13 +44,12 @@ const entities = [
     ]
   },
   {
-    name: 'Game Master',
-    description: 'I am the game master',
-    avatar: 'https://www.lagazettedescommunes.com/wp-content/uploads/2020/06/adobestock-309554820.jpeg',
+    name: 'Woody',
+    description: 'There\'s a snake in his boot',
+    avatar: 'https://static.voices.com/wp-content/uploads/2022/10/open-uri20150422-20810-10n7ovy_9b42e613-e1668010464234.jpeg',
     actions: [
       helloAction,
-      headsOrTailsAction,
-      shifumiAction
+      serpentAction
     ]
   },
   {
@@ -55,22 +61,22 @@ const entities = [
       swAction
     ]
   },
+  // {
+  //   name: 'Cristiano Ronaldo',
+  //   description: 'I don\'t have to show anything to anyone. There is nothing to prove.',
+  //   avatar: 'https://www.gala.fr/imgre/fit/~1~gal~2023~09~22~e1269223-de92-4b78-81f2-d10156c6ad13.jpeg/2948x2123/quality/80/cristiano-ronaldo.jpeg',
+  //   actions: [
+  //     helloAction,
+  //     footballAction
+  //   ]
+  // },
   {
-    name: 'Yoda',
-    description: 'Yoda, I am',
-    avatar: 'https://fr.web.img4.acsta.net/r_1280_720/newsv7/21/06/23/11/44/3625774.jpg',
+    name: 'Cupid',
+    description: 'I can calculate your love',
+    avatar: 'https://media.istockphoto.com/id/637985650/vector/cute-little-cupid-aiming-at-someone.jpg?s=612x612&w=0&k=20&c=o1Gi4i_kRZKzYKaA73zAjel9F0mNIEOnTKjvGOjZnbs=',
     actions: [
       helloAction,
-      jediAction
-    ]
-  },
-  {
-    name: 'Woody',
-    description: 'There\'s a snake in his boot',
-    avatar: 'https://static.voices.com/wp-content/uploads/2022/10/open-uri20150422-20810-10n7ovy_9b42e613-e1668010464234.jpeg',
-    actions: [
-      helloAction,
-      serpentAction
+      loveAction
     ]
   }
 ];
