@@ -2,6 +2,8 @@ import helloAction from '../models/bots/actions/hello';
 import jediAction from '../models/bots/actions/jedi';
 import pokemonAction from '../models/bots/actions/pokemon';
 import serpentAction from '../models/bots/actions/botte';
+import chuckAction from '../models/bots/actions/chuck';
+import parkingAction from '../models/bots/actions/parking';
 
 const entities = [
   {
@@ -9,7 +11,8 @@ const entities = [
     description: 'I am an assistant to help you !',
     avatar: 'https://source.boringavatars.com/',
     actions: [
-      helloAction
+      helloAction,
+      parkingAction
     ]
   },
   {
@@ -45,6 +48,15 @@ const entities = [
     actions: [
       helloAction,
       serpentAction
+    ]
+  },
+  {
+    name: 'Chuck Norris',
+    description: 'The legend',
+    avatar: 'https://www.masculin.com/wp-content/uploads/sites/2/article/13438/chuck-norris.jpg',
+    actions: [
+      helloAction,
+      chuckAction
     ]
   }
 ];

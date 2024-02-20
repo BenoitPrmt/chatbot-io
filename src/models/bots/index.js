@@ -7,7 +7,7 @@ const Bot = class {
     for (let i = 0; i < this.entity.actions.length; i += 1) {
       const action = this.entity.actions[i];
       if (action.words.includes(word)) {
-        if (action.args.length !== args.length) return `This command takes args : ${action.args.join(', ')}`;
+        if (action.args.length > 0 && args.length === 0) return `This command takes args : ${action.args.join(', ')}`;
         return action.action(action.args.length > 0 ? args : null);
       }
     }
