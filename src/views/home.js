@@ -4,7 +4,7 @@ import entities from '../data/entitiesData';
 export default () => (`
     <section class="row chat">
       <div class="col-3 left-side">
-        <h3 class="text-light">Bots' Name</h3>
+        <h2 class="text-light">Their Names.</h2>
         <ul class="list-group gap-3 pt-3 col-11">
         ${entities.map((bot) => homeBotList(bot)).join('')}
         </ul>
