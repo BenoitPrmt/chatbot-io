@@ -25,7 +25,7 @@ const parkingAction = {
       if (!parking) return { message: `No parking found with the name ${args[0]}` };
 
       return {
-        message: `🚗 ${parking.nom} has ${parking.nb_places_disponibles}/${parking.nb_places} available places (${parking.taux_disponibilite}%)`
+        message: `🚗 ${parking.nom} has ${parking.nb_places_disponibles}/${parking.nb_places} available places (${Math.floor(parking.taux_disponibilite)}%)`
       };
     } catch (error) {
       return error;
