@@ -28,6 +28,6 @@ export default (data) => {
         </div>
         <small class="text-muted pt-1">${formattedDate}</small>
       </div>
-    </div >
+    </div>
       `;
 };
