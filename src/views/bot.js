@@ -1,7 +1,7 @@
 export default (data) => {
   const { name, description, actions } = data;
   return `
-    <div class="my-2 col-6 col-lg-3">
+    <div class="my-2 col-6 col-lg-3 animation-bots">
       <div class="card h-100 card-bots">
         <div class="card-body">
           <h5 class="card-title">${name}</h5>
