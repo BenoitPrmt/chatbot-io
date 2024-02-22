@@ -9,6 +9,13 @@ import shifumiAction from '../models/bots/actions/shifumi';
 import passwordAction from '../models/bots/actions/password';
 import weatherAction from '../models/bots/actions/weather';
 import loveAction from '../models/bots/actions/love';
+import gameMaster from '../assets/bots/gamemaster.jpeg';
+import yoda from '../assets/bots/yoda.webp';
+import cupid from '../assets/bots/cupid.jpg';
+import C3PO from '../assets/bots/c-3po.jpeg';
+import professorOak from '../assets/bots/professoroak.png';
+import woody from '../assets/bots/woody.jpeg';
+import evelyne from '../assets/bots/evelyne.jpeg';
 
 const entities = [
   {
@@ -24,7 +31,7 @@ const entities = [
   {
     name: 'Evelyne Dehliat',
     description: 'Miss météo',
-    avatar: 'https://www.gala.fr/imgre/fit/~1~gal~2023~10~02~c259200d-c07b-45a2-94bc-b2b9c289807b.jpeg/2671x1914/quality/80/evelyne-dheliat.jpeg',
+    avatar: evelyne,
     actions: [
       helloAction,
       weatherAction
@@ -33,7 +40,7 @@ const entities = [
   {
     name: 'Professor Oak',
     description: 'Catch them all',
-    avatar: 'https://cdn.discordapp.com/attachments/810585716580810752/1207976431242584074/1000.png?ex=65e19ab8&is=65cf25b8&hm=c063310283d53809a027f937edb0898e8a21156deae35f4fcc34c72eb8e755c5&',
+    avatar: professorOak,
     actions: [
       helloAction,
       pokemonAction
@@ -42,7 +49,7 @@ const entities = [
   {
     name: 'Game Master',
     description: 'I am the game master',
-    avatar: 'https://www.lagazettedescommunes.com/wp-content/uploads/2020/06/adobestock-309554820.jpeg',
+    avatar: gameMaster,
     actions: [
       helloAction,
       headsOrTailsAction,
@@ -52,7 +59,7 @@ const entities = [
   {
     name: 'C-3PO',
     description: 'A pleasure to meet you. I am C-3PO, Human-Cyborg Relations.',
-    avatar: 'https://lumiere-a.akamaihd.net/v1/images/c-3po-main_d6850e28.jpeg?region=242%2C0%2C716%2C536',
+    avatar: C3PO,
     actions: [
       helloAction,
       swAction
@@ -61,7 +68,7 @@ const entities = [
   {
     name: 'Yoda',
     description: 'Yoda, I am',
-    avatar: 'https://fr.web.img4.acsta.net/r_1280_720/newsv7/21/06/23/11/44/3625774.jpg',
+    avatar: yoda,
     actions: [
       helloAction,
       jediAction
@@ -70,7 +77,7 @@ const entities = [
   {
     name: 'Woody',
     description: 'There\'s a snake in his boot',
-    avatar: 'https://static.voices.com/wp-content/uploads/2022/10/open-uri20150422-20810-10n7ovy_9b42e613-e1668010464234.jpeg',
+    avatar: woody,
     actions: [
       helloAction,
       serpentAction
@@ -79,7 +86,7 @@ const entities = [
   {
     name: 'Cupid',
     description: 'I calculate your love percentage',
-    avatar: 'https://media.istockphoto.com/id/637985650/vector/cute-little-cupid-aiming-at-someone.jpg?s=612x612&w=0&k=20&c=o1Gi4i_kRZKzYKaA73zAjel9F0mNIEOnTKjvGOjZnbs=',
+    avatar: cupid,
     actions: [
       helloAction,
       loveAction
