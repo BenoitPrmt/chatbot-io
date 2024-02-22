@@ -12,6 +12,12 @@ const parkingAction = {
         headers
       });
       const dataJson = await response.json();
+
+      if (args[0] === 'list') {
+        const parkings = dataJson.results.map((parking) => parking.nom);
+        return { message: `List of parkings: ${parkings.join('<br>')}` };
+      }
+
       const parking = dataJson.results.find(
         (element) => element.nom.toLowerCase() === args.join(' ').toLowerCase()
       );

@@ -99,7 +99,7 @@ h5 {
 
   .card {
     color: #0d6efd;
-    width: 35%;
+    max-width: 80%;
   }
 
   .messages {
@@ -138,6 +138,11 @@ h5 {
 
 .left-side {
   border-right: 1px solid #e5e7eb4c;
+
+  .card {
+    color: #0d6efd;
+    max-width: 80%;
+  }
 
   li {
     list-style: none;
