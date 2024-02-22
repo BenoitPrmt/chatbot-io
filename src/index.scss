@@ -1,6 +1,11 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
+$primary-color: #101827;
+$secondary-color: #0d6efd;
+$separation-color: #e5e7eb4c;
+$grey-color: #6c757d;
+
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +22,7 @@ body {
 
 nav {
   align-items: center;
-  border-bottom: 1px solid #e5e7eb4c !important;
+  border-bottom: 1px solid $separation-color !important;
 
   img {
     width: 2.6em;
@@ -33,15 +38,15 @@ nav {
   }
 
   button {
-    color: white !important;
-    border: 2px solid grey !important;
+    color: #FFF !important;
+    border: 2px solid $grey-color !important;
 
     i {
-      color: grey !important;
+      color: $grey-color !important;
       transition: 0.5s;
 
       &:hover {
-        color: #0d6efd !important;
+        color: $secondary-color !important;
       }
     }
   }
@@ -49,13 +54,13 @@ nav {
 
 .nav-link {
   text-decoration: none;
-  color: grey !important;
+  color: $grey-color !important;
   font-size: 1.2em;
   transition: 0.3s !important;
 
   &:hover {
     transform: translateY(-5px);
-    color: #0d6efd !important;
+    color: $secondary-color !important;
   }
 }
 
@@ -69,7 +74,7 @@ h5 {
   padding: 1rem;
   height: 80vh;
   overflow-y: scroll;
-  scrollbar-color: #0d6efd transparent;
+  scrollbar-color: $secondary-color transparent;
   scrollbar-width: thin;
 }
 
@@ -92,13 +97,13 @@ h5 {
 
 
     &:hover {
-      color: #0d6efd !important;
+      color: $secondary-color !important;
     }
   }
 
 
   .card {
-    color: #0d6efd;
+    color: $secondary-color;
     max-width: 80%;
     border: none;
 
@@ -108,20 +113,19 @@ h5 {
   }
 
   .messages {
-    bottom: 0;
-    background-color: #101827 !important;
+    background-color: $primary-color !important;
 
     .input-group {
 
       .btn {
-        background-color: #0d6efd;
-        color: white;
-        border: 2px solid #0d6efd;
+        background-color: $secondary-color;
+        color: #FFF;
+        border: 2px solid $secondary-color;
         transition: 0.5s;
 
         &:hover {
           background-color: white;
-          color: #0d6efd;
+          color: $secondary-color;
         }
 
         i {
@@ -130,7 +134,7 @@ h5 {
         }
 
         &:hover i {
-          color: #0d6efd;
+          color: $secondary-color;
         }
       }
     }
@@ -142,10 +146,10 @@ h5 {
 }
 
 .left-side {
-  border-right: 1px solid #e5e7eb4c;
+  border-right: 1px solid $separation-color;
 
   .card {
-    color: #0d6efd;
+    color: $secondary-color;
     max-width: 80%;
   }
 
@@ -156,7 +160,7 @@ h5 {
 
 
     &:hover {
-      background-color: #0d6efd !important;
+      background-color: $secondary-color !important;
       transform: scale(0.95);
     }
 
@@ -168,20 +172,11 @@ h5 {
       color: #FFF !important;
       transition: color 0.2s linear;
     }
-
-    /* img {
-      filter: grayscale(50%);
-
-    }
-
-    &:hover img {
-      filter: grayscale(0%);
-    } */
   }
 }
 
 .chat {
-  background-color: #101827;
+  background-color: $primary-color;
   width: 90%;
   margin: 0 auto;
   border-radius: 0.25rem;
@@ -194,9 +189,9 @@ h5 {
 
 .messages-section {
   overflow-y: scroll;
-  scrollbar-color: #0d6efd transparent;
+  scrollbar-color: $secondary-color transparent;
   scrollbar-width: thin;
-  height: 90%;
+  height: 95%;
 
   .left-body {
     border-radius: 0.8rem 0.8rem 0.8rem 0;
@@ -212,7 +207,7 @@ h5 {
 }
 
 .card {
-  background-color: #101827;
+  background-color: $primary-color;
   padding: 1rem;
   transition: 0.5s;
 
@@ -223,8 +218,8 @@ h5 {
   }
 
   .btn {
-    background-color: #0d6efd !important;
-    color: white !important;
+    background-color: $secondary-color !important;
+    color: #FFF !important;
   }
 
   &:hover {
@@ -252,7 +247,7 @@ h5 {
 .input-group {
   input {
     border-radius: 0.25rem;
-    color: #6c757d;
+    color: $grey-color;
     font-size: 0.8em;
     transition: 0.5s;
 
