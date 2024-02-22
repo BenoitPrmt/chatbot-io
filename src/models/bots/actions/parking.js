@@ -15,7 +15,7 @@ const parkingAction = {
 
       if (args[0] === 'list') {
         const parkings = dataJson.results.map((parking) => parking.nom);
-        return { message: `List of parkings: ${parkings.join('<br>')}` };
+        return { message: `🅿️ <b>List of parkings:</b><br> ${parkings.join('<br>')}` };
       }
 
       const parking = dataJson.results.find(

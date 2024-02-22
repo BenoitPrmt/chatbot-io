@@ -85,6 +85,10 @@ h5 {
 .right-side .card {
   color: #0d6efd;
   max-width: 80%;
+  border: none;
+}
+.right-side .card > * {
+  background-color: transparent;
 }
 .right-side .messages {
   bottom: 0;
