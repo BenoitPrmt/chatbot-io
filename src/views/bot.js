@@ -6,12 +6,12 @@ export default (data) => {
         <div class="card-body">
           <h5 class="card-title">${name}</h5>
           <p class="card-text">${description}</p>
-          <p class="card-text">Commands : <br><span class="allowTextCopy">${actions.map(
+          <p class="card-text">Commands : <br><span class="allowTextCopy commands">${actions.map(
     (action) => {
       let valueToReturn = `- ${action.words[0]}`;
       action.args.forEach((arg) => {
         if (arg) {
-          valueToReturn += ` <#${arg}> `;
+          valueToReturn += ` &lt;${arg}&gt;`;
         }
       });
       return valueToReturn;

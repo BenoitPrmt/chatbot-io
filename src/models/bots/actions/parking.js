@@ -1,7 +1,7 @@
 const parkingAction = {
   name: 'parking',
   words: ['parking'],
-  args: ['parking_name'],
+  args: ['list|parking_name'],
   action: async (args) => {
     const headers = {
       Accept: 'application/json'
