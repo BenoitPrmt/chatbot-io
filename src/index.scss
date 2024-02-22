@@ -82,6 +82,7 @@ h5 {
 .right-side {
   margin-bottom: 12px;
   transition: 0.5s;
+  position: relative;
 
   .avatar {
     width: 40px;
@@ -114,6 +115,9 @@ h5 {
 
   .messages {
     background-color: $primary-color !important;
+    position: absolute;
+    bottom: 0;
+    width: 95%;
 
     .input-group {
 
