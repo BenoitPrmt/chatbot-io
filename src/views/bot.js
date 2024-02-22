@@ -8,7 +8,7 @@ export default (data) => {
           <p class="card-text">${description}</p>
           <p class="card-text">Commands : <br><span class="allowTextCopy">${actions.map(
     (action) => {
-      let valueToReturn = `- ${action.name}`;
+      let valueToReturn = `- ${action.words[0]}`;
       action.args.forEach((arg) => {
         if (arg) {
           valueToReturn += ` <#${arg}> `;
