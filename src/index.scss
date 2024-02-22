@@ -100,6 +100,11 @@ h5 {
   .card {
     color: #0d6efd;
     max-width: 80%;
+    border: none;
+
+    &>* {
+      background-color: transparent;
+    }
   }
 
   .messages {
