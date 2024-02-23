@@ -19,7 +19,8 @@ const Chat = class {
       this.userSendMessage();
     });
 
-    document.addEventListener('keyup', (e) => {
+    const elMessageInput = document.querySelector('.input-message-content');
+    elMessageInput.addEventListener('keyup', (e) => {
       if (e.code === 'Enter') {
         this.userSendMessage();
       }
