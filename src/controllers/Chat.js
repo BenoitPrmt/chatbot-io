@@ -19,7 +19,7 @@ const Chat = class {
       this.userSendMessage();
     });
 
-    const elMessageInput = document.querySelector('.input-message-content');
+    const elMessageInput = document.querySelector('.message-input');
     elMessageInput.addEventListener('keyup', (e) => {
       if (e.code === 'Enter') {
         this.userSendMessage();
@@ -30,7 +30,7 @@ const Chat = class {
   }
 
   enableCommandHistory() {
-    const elInputField = document.querySelector('.input-message-content');
+    const elInputField = document.querySelector('.message-input');
     elInputField.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowUp') {
         let data = JSON.parse(localStorage.getItem('messages') || '[]');
@@ -66,7 +66,7 @@ const Chat = class {
   }
 
   userSendMessage() {
-    const elInputMessageContent = document.querySelector('.input-message-content');
+    const elInputMessageContent = document.querySelector('.message-input');
 
     if (elInputMessageContent.value.length === 0) return;
 

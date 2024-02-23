@@ -31,7 +31,7 @@ export default () => {
   <div class="d-flex flex-column w-100 pt-5 align-items-center">
   <label class="text-light">Username :</label>
   <div class="input-group mt-1">
-  <input type="text" class="form-control input-message-content" id="username" placeholder="Enter your username..." aria-label="Enter your username..."
+  <input type="text" class="form-control message-input" id="username" placeholder="Enter your username..." aria-label="Enter your username..."
   aria-describedby="button-addon2">
   </div>
   <button class="btn btn-primary mt-2" type="button" id="submitBtn">Chat with the bots</button>
