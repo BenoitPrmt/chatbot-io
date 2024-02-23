@@ -11,7 +11,7 @@ const Bot = class {
         return action.action(args.length > 0 ? args : null);
       }
     }
-    return null; // TODO
+    return '';
   }
 };
 
