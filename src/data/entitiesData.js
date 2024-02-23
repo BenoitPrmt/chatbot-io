@@ -1,6 +1,5 @@
 import {
   helloAction,
-  jediAction,
   pokemonAction,
   serpentAction,
   parkingAction,
@@ -13,12 +12,12 @@ import {
 } from '../models/bots/actions/index';
 
 import gameMaster from '../assets/bots/gamemaster.jpeg';
-import yoda from '../assets/bots/yoda.webp';
 import cupid from '../assets/bots/cupid.jpg';
 import C3PO from '../assets/bots/c-3po.jpeg';
 import professorOak from '../assets/bots/professoroak.png';
 import woody from '../assets/bots/woody.jpeg';
 import evelyne from '../assets/bots/evelyne.jpeg';
+import gameStatsTracker from '../assets/bots/game-stats-tracker.webp';
 
 // TODO: REFACTOR IMPORTS
 
@@ -71,15 +70,6 @@ const entities = [
     ]
   },
   {
-    name: 'Yoda',
-    description: 'Yoda, I am',
-    avatar: yoda,
-    actions: [
-      helloAction,
-      jediAction
-    ]
-  },
-  {
     name: 'Woody',
     description: 'There\'s a snake in his boot',
     avatar: woody,
@@ -95,6 +85,14 @@ const entities = [
     actions: [
       helloAction,
       loveAction
+    ]
+  },
+  {
+    name: 'Game Stats Tracker',
+    description: 'I can track every game stats',
+    avatar: gameStatsTracker,
+    actions: [
+      helloAction
     ]
   }
 ];

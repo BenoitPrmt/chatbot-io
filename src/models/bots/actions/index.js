@@ -1,5 +1,4 @@
 import helloAction from './hello';
-import jediAction from './jedi';
 import pokemonAction from './pokemon';
 import serpentAction from './botte';
 import parkingAction from './parking';
@@ -12,7 +11,6 @@ import loveAction from './love';
 
 export {
   helloAction,
-  jediAction,
   pokemonAction,
   serpentAction,
   parkingAction,
