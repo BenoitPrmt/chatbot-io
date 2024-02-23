@@ -13,19 +13,19 @@ const Home = class {
 
   render() {
     return `
-        <div class="row">
-          <div class="col-12">${viewNav()}</div>
-        </div>
-    <div class="container-fluid pt-4">
-        ${viewHome()}
-    </div>
+      <div class="row">
+        <div class="col-12">${viewNav()}</div>
+      </div>
+      <div class="container-fluid pt-4">
+          ${viewHome()}
+      </div>
     `;
   }
 
   run() {
     this.el.innerHTML = this.render();
 
-    new Chat();
+    new Chat(); // CHANGER
   }
 };
 

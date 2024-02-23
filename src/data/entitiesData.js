@@ -1,14 +1,17 @@
-import helloAction from '../models/bots/actions/hello';
-import jediAction from '../models/bots/actions/jedi';
-import pokemonAction from '../models/bots/actions/pokemon';
-import serpentAction from '../models/bots/actions/botte';
-import parkingAction from '../models/bots/actions/parking';
-import swAction from '../models/bots/actions/starwars';
-import headsOrTailsAction from '../models/bots/actions/headsOrTails';
-import shifumiAction from '../models/bots/actions/shifumi';
-import passwordAction from '../models/bots/actions/password';
-import weatherAction from '../models/bots/actions/weather';
-import loveAction from '../models/bots/actions/love';
+import {
+  helloAction,
+  jediAction,
+  pokemonAction,
+  serpentAction,
+  parkingAction,
+  swAction,
+  headsOrTailsAction,
+  shifumiAction,
+  passwordAction,
+  weatherAction,
+  loveAction
+} from '../models/bots/actions/index';
+
 import gameMaster from '../assets/bots/gamemaster.jpeg';
 import yoda from '../assets/bots/yoda.webp';
 import cupid from '../assets/bots/cupid.jpg';
@@ -16,6 +19,8 @@ import C3PO from '../assets/bots/c-3po.jpeg';
 import professorOak from '../assets/bots/professoroak.png';
 import woody from '../assets/bots/woody.jpeg';
 import evelyne from '../assets/bots/evelyne.jpeg';
+
+// TODO: REFACTOR IMPORTS
 
 const entities = [
   {
