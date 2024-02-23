@@ -1,19 +1,29 @@
-import viewMessage from '../views/message';
-
 import Bot from '../models/bots/index';
 import entities from '../data/entitiesData';
 
+import viewMessage from '../views/message';
+import viewNav from '../views/nav';
+import viewHome from '../views/home';
+
+// TODO(Benoit) : Refactor le fichier pour optimiser le code
 const Chat = class {
   constructor() {
-    this.el = document.querySelector('.messages-section');
+    this.el = document.querySelector('#root');
+    this.run();
+
+    this.elMessage = document.querySelector('.messages-section');
+
     this.bots = entities.map((entity) => new Bot(entity));
     this.username = localStorage.getItem('username')
       .replace(/"/g, '');
 
     this.showOldMessages();
-
     this.scrollToBottom();
+    this.addListeners();
+    this.enableCommandHistory();
+  }
 
+  addListeners() {
     const elSendButton = document.querySelector('.send-message');
     elSendButton.addEventListener('click', () => {
       this.userSendMessage();
@@ -25,8 +35,6 @@ const Chat = class {
         this.userSendMessage();
       }
     });
-
-    this.enableCommandHistory();
   }
 
   enableCommandHistory() {
@@ -41,7 +49,7 @@ const Chat = class {
     });
   }
 
-  checkIfCommand(message) {
+  checkIfMessageIsCommand(message) {
     const messageWords = message.content.split(' ');
     const prefix = messageWords[0];
     const args = messageWords.slice(1) || [];
@@ -105,11 +113,13 @@ const Chat = class {
       this.updateLocalStorage(messageToSend);
 
       if (messageToSend.sender === this.username) {
-        this.checkIfCommand(messageToSend);
+        this.checkIfMessageIsCommand(messageToSend);
       }
     }
 
-    this.run(messageToSend);
+    // this.run(messageToSend);
+
+    this.elMessage.innerHTML += viewMessage(messageToSend);
     this.scrollToBottom();
   }
 
@@ -138,12 +148,19 @@ const Chat = class {
     elRightSide.scrollTo(0, elRightSide.scrollHeight);
   }
 
-  render(messageData) {
-    return viewMessage(messageData);
+  render() {
+    return `
+      <div class="row">
+        <div class="col-12">${viewNav()}</div>
+      </div>
+      <div class="container-fluid pt-4">
+          ${viewHome()}
+      </div>
+    `;
   }
 
-  run(messageData) {
-    this.el.innerHTML += this.render(messageData);
+  run() {
+    this.el.innerHTML = this.render();
   }
 };
 
