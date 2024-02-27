@@ -15,7 +15,6 @@ const LeagueStats = {
     try {
       const response = await axios.request(options);
       const datas = response.data;
-      console.log(datas);
       return {
         message: `
         The item shop is ${datas.items.length} items long.<br/>
