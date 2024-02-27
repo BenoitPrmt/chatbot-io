@@ -153,6 +153,10 @@ h5 {
 .left-side {
   border-right: 1px solid $separation-color;
 
+  h2 {
+    font-size: 1.1rem;
+  }
+
   .card {
     color: $secondary-color;
     max-width: 80%;

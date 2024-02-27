@@ -6,7 +6,7 @@ export default () => (`
     <div class="d-flex gap-3">
     <a href='/'><img src="${robotIcon}" alt="Robot Icon"></a>
     <a class="nav-link" href="/">Chatbot IO</a>
-    <a class="nav-link" href="/bots">Bots</a>
+    <a class="nav-link" href="/bots">Commands</a>
     </div>
   </div>
 </nav>

@@ -119,6 +119,9 @@ h5 {
 .left-side {
   border-right: 1px solid rgba(229, 231, 235, 0.2980392157);
 }
+.left-side h2 {
+  font-size: 1.1rem;
+}
 .left-side .card {
   color: #0d6efd;
   max-width: 80%;
