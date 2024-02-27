@@ -18,7 +18,7 @@ const LeagueStats = {
       return {
         message: `
         The item shop is ${datas.items.length} items long.<br/>
-        There is : <br/><br/>${datas.items.map((item) => `<img src="${item.images.smallIcon}" width="40" height="40" style="background-color: #000"/> ${item.name} | ${item.description}`).join('<br /><br/>')}`
+        There is : <br/><br/>${datas.items.map((item) => `<img src="${item.images.largeIcon}" width="40" height="40" style="background-color: #000"/> ${item.name} | ${item.description}`).join('<br /><br/>')}`
       };
     } catch (error) {
       return error;
