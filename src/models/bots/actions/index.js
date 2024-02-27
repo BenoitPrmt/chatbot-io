@@ -10,6 +10,7 @@ import weatherAction from './weather';
 import loveAction from './love';
 import fortniteShop from './fortniteShop';
 import fortniteLastAdded from './fortniteLastAdded';
+import fortniteMap from './fortniteMap';
 
 export {
   helloAction,
@@ -23,5 +24,6 @@ export {
   weatherAction,
   loveAction,
   fortniteShop,
-  fortniteLastAdded
+  fortniteLastAdded,
+  fortniteMap
 };

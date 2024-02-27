@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const LeagueStats = {
-  name: 'fortnite',
+const FortniteShop = {
+  name: 'fortnite shop',
   words: ['ftnshop', 'fortniteShop', 'FortniteShop'],
   args: [],
   action: async () => {
@@ -14,11 +14,17 @@ const LeagueStats = {
 
     try {
       const response = await axios.request(options);
-      const datas = response.data;
+      const datas = response.data.data.featured;
       return {
         message: `
-        The item shop is ${datas.items.length} items long.<br/>
-        There is : <br/><br/>${datas.items.map((item) => `<img src="${item.images.largeIcon}" width="40" height="40" style="background-color: #000"/> ${item.name} | ${item.description}`).join('<br /><br/>')}`
+        The item shop is ${datas.entries.length} items long.<br/>
+        There is : <br/>${datas.entries.map((entry) => `
+        ${entry.bundle?.name ? `Bundle : ${entry.bundle.name}<br/>` : ''}
+        Regular Price : ${entry.regularPrice}<br/>
+        Final Price : ${entry.finalPrice}<br/>
+        ${entry.items.map((item) => `
+            <img src='${item.images.icon}' width="40" height="40" class="bg-dark rounded p-1"/> ${item.name} | ${item.description}`).join('<br /><br/>')}
+            `).join('<br /><br/>')}`
       };
     } catch (error) {
       return error;
@@ -26,4 +32,4 @@ const LeagueStats = {
   }
 };
 
-export default LeagueStats;
+export default FortniteShop;
