@@ -43,7 +43,6 @@ const starWarsAction = {
       }
     }
 
-    // Call fetchData and return the result wrapped in a promise
     return new Promise((resolve, reject) => {
       fetchData('https://swapi.dev/api/people?page=1')
         .then(resolve)

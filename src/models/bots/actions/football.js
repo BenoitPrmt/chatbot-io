@@ -9,7 +9,7 @@ const footballAction = {
       method: 'GET',
       url: 'https://api-football-beta.p.rapidapi.com/timezone',
       headers: {
-        'X-RapidAPI-Key': '660df63948msh12586b2b545dd54p17b98cjsnb8f468e7e779',
+        'X-RapidAPI-Key': process.env.RAPID_KEY,
         'X-RapidAPI-Host': 'api-football-beta.p.rapidapi.com'
       }
     };

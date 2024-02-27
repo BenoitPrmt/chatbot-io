@@ -8,7 +8,8 @@ import {
   shifumiAction,
   passwordAction,
   weatherAction,
-  loveAction
+  loveAction,
+  leagueAction
 } from '../models/bots/actions/index';
 
 import gameMaster from '../assets/bots/gamemaster.jpeg';
@@ -92,7 +93,8 @@ const entities = [
     description: 'I can track every game stats',
     avatar: gameStatsTracker,
     actions: [
-      helloAction
+      helloAction,
+      leagueAction
     ]
   }
 ];

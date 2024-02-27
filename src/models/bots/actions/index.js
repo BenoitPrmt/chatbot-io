@@ -8,6 +8,7 @@ import shifumiAction from './shifumi';
 import passwordAction from './password';
 import weatherAction from './weather';
 import loveAction from './love';
+import leagueAction from './leagueStats';
 
 export {
   helloAction,
@@ -19,5 +20,6 @@ export {
   shifumiAction,
   passwordAction,
   weatherAction,
-  loveAction
+  loveAction,
+  leagueAction
 };
