@@ -9,7 +9,8 @@ import {
   passwordAction,
   weatherAction,
   loveAction,
-  leagueAction
+  fortniteShop,
+  fortniteLastAdded
 } from '../models/bots/actions/index';
 
 import gameMaster from '../assets/bots/gamemaster.jpeg';
@@ -18,7 +19,7 @@ import C3PO from '../assets/bots/c-3po.jpeg';
 import professorOak from '../assets/bots/professoroak.png';
 import woody from '../assets/bots/woody.jpeg';
 import evelyne from '../assets/bots/evelyne.jpeg';
-import gameStatsTracker from '../assets/bots/game-stats-tracker.webp';
+import gameHelper from '../assets/bots/game-helper.webp';
 
 // TODO: REFACTOR IMPORTS
 
@@ -89,12 +90,13 @@ const entities = [
     ]
   },
   {
-    name: 'Game Stats Tracker',
-    description: 'I can track every game stats',
-    avatar: gameStatsTracker,
+    name: 'Video Game Helper',
+    description: 'I can help you in every game',
+    avatar: gameHelper,
     actions: [
       helloAction,
-      leagueAction
+      fortniteLastAdded,
+      fortniteShop
     ]
   }
 ];

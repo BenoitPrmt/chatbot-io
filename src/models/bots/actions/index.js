@@ -8,7 +8,8 @@ import shifumiAction from './shifumi';
 import passwordAction from './password';
 import weatherAction from './weather';
 import loveAction from './love';
-import leagueAction from './leagueStats';
+import fortniteShop from './fortniteShop';
+import fortniteLastAdded from './fortniteLastAdded';
 
 export {
   helloAction,
@@ -21,5 +22,6 @@ export {
   passwordAction,
   weatherAction,
   loveAction,
-  leagueAction
+  fortniteShop,
+  fortniteLastAdded
 };
