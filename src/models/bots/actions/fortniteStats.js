@@ -29,7 +29,8 @@ const FortniteStats = {
         - ${datas.stats.all.overall.deaths} deaths<br/>
         - ${datas.stats.all.overall.kd} K/D ratio<br/>
         - ${datas.stats.all.overall.matches} matches played<br/>
-        - ${datas.stats.all.overall.winRate} win rate<br/>
+        - ${datas.stats.all.overall.minutesPlayed} minutes played <br/>
+        - ${datas.stats.all.overall.winRate}% win rate<br/>
         `
       };
     } catch (error) {
