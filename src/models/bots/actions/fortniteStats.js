@@ -17,10 +17,19 @@ const FortniteStats = {
 
     try {
       const response = await axios.request(options);
-      const datas = response.data.data.featured;
+      const datas = response.data.data;
       return {
         message: `
-        ${datas}
+        Account name : ${datas.account.name}<br />
+        BattlePass level : ${datas.battlePass.level}<br />
+        BattlePass progress : ${datas.battlePass.progress}<br />
+        You have : <br/>
+        - ${datas.stats.all.overall.wins} wins<br/>
+        - ${datas.stats.all.overall.kills} kills <br/>
+        - ${datas.stats.all.overall.deaths} deaths<br/>
+        - ${datas.stats.all.overall.kd} K/D ratio<br/>
+        - ${datas.stats.all.overall.matches} matches played<br/>
+        - ${datas.stats.all.overall.winRate} win rate<br/>
         `
       };
     } catch (error) {
