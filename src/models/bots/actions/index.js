@@ -11,6 +11,7 @@ import loveAction from './love';
 import fortniteShop from './fortniteShop';
 import fortniteLastAdded from './fortniteLastAdded';
 import fortniteMap from './fortniteMap';
+import FortniteStats from './fortniteStats';
 
 export {
   helloAction,
@@ -25,5 +26,6 @@ export {
   loveAction,
   fortniteShop,
   fortniteLastAdded,
-  fortniteMap
+  fortniteMap,
+  FortniteStats
 };

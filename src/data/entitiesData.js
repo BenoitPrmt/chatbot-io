@@ -11,7 +11,8 @@ import {
   loveAction,
   fortniteShop,
   fortniteLastAdded,
-  fortniteMap
+  fortniteMap,
+  FortniteStats
 } from '../models/bots/actions/index';
 
 import gameMaster from '../assets/bots/gamemaster.jpeg';
@@ -98,7 +99,8 @@ const entities = [
       helloAction,
       fortniteLastAdded,
       fortniteShop,
-      fortniteMap
+      fortniteMap,
+      FortniteStats
     ]
   }
 ];
