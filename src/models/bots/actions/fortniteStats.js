@@ -3,13 +3,16 @@ import axios from 'axios';
 const FortniteStats = {
   name: 'fortnite account stats',
   words: ['ftnstats', 'fortniteStats', 'FortniteStats'],
-  args: ['accountId'],
+  args: ['accountName'],
   action: async (accountId) => {
-    const apiUrl = `https://fortnite-api.com/v2/stats/br/v2/${accountId}`;
+    const apiUrl = 'https://fortnite-api.com/v2/stats/br/v2';
 
     const options = {
       method: 'GET',
       url: apiUrl,
+      params: {
+        name: accountId.join('')
+      },
       headers: {
         Authorization: process.env.FORTNITE_KEY
       }

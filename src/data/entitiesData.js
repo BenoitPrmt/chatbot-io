@@ -92,7 +92,7 @@ const entities = [
     ]
   },
   {
-    name: 'Video Game Helper',
+    name: 'Video Game',
     description: 'I can help you in every game',
     avatar: gameHelper,
     actions: [
