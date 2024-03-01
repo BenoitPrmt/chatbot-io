@@ -14,17 +14,20 @@ const ExchangeRate = {
         apiKey: process.env.CURRENCY_KEY
       },
       params: {
-        base: 'EUR'
+        base_currency: 'EUR'
       }
     };
 
     try {
       const response = await axios.request(options);
       const datas = response.data.data;
+
+      const currencyCodes = Object.keys(datas);
+      const currencyRates = Object.values(datas);
+      const exchangeRateMessage = currencyCodes.map((code, index) => `${code}: ${currencyRates[index]}`).join('<br/>');
+
       return {
-        message: `Current rate: ${datas.map(
-          (data) => `${data.name}: ${data.rate}`
-        ).join('<br/>')}`
+        message: `Current rates:<br/>${exchangeRateMessage}`
       };
     } catch (error) {
       return error;
