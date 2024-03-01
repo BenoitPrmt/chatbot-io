@@ -27,7 +27,7 @@ const ExchangeRate = {
       const exchangeRateMessage = currencyCodes.map((code, index) => `${code}: ${currencyRates[index]}`).join('<br/>');
 
       return {
-        message: `Current rates:<br/>${exchangeRateMessage}`
+        message: `💵 Current rates 💶<br/>${exchangeRateMessage}`
       };
     } catch (error) {
       return error;
