@@ -12,12 +12,14 @@ import fortniteShop from './fortniteShop';
 import fortniteLastAdded from './fortniteLastAdded';
 import fortniteMap from './fortniteMap';
 import FortniteStats from './fortniteStats';
+import exchangeRate from './exchangeRate';
 
 export {
   helloAction,
   pokemonAction,
   serpentAction,
   parkingAction,
+  exchangeRate,
   swAction,
   headsOrTailsAction,
   shifumiAction,

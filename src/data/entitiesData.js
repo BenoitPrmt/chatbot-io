@@ -12,7 +12,8 @@ import {
   fortniteShop,
   fortniteLastAdded,
   fortniteMap,
-  FortniteStats
+  FortniteStats,
+  exchangeRate
 } from '../models/bots/actions/index';
 
 import gameMaster from '../assets/bots/gamemaster.jpeg';
@@ -33,7 +34,8 @@ const entities = [
     actions: [
       helloAction,
       parkingAction,
-      passwordAction
+      passwordAction,
+      exchangeRate
     ]
   },
   {
