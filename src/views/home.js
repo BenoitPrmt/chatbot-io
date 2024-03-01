@@ -15,7 +15,7 @@ export default () => (`
       
         <div class="messages">
           <div class="input-group">
-              <input type="text" class="form-control message-input" placeholder="Type something..." aria-label="Type something..."
+              <input type="text" class="form-control message-input" spellcheck="false" placeholder="Type something..." aria-label="Type something..."
                      aria-describedby="button-addon2">
               <button class="btn btn-dark send-message" type="button" id="button-addon2"><i class="fa-solid fa-paper-plane"></i></button>
           </div>
