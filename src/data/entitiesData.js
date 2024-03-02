@@ -16,13 +16,15 @@ import {
   exchangeRate
 } from '../models/bots/actions/index';
 
-import gameMaster from '../assets/bots/gamemaster.jpeg';
-import cupid from '../assets/bots/cupid.jpg';
-import C3PO from '../assets/bots/c-3po.jpeg';
-import professorOak from '../assets/bots/professoroak.png';
-import woody from '../assets/bots/woody.jpeg';
-import evelyne from '../assets/bots/evelyne.jpeg';
-import gameHelper from '../assets/bots/game-helper.webp';
+import {
+  gameMaster,
+  cupid,
+  C3PO,
+  professorOak,
+  woody,
+  evelyne,
+  gameHelper
+} from '../assets/index';
 
 // TODO: REFACTOR IMPORTS
 

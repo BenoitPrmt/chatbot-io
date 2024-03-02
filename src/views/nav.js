@@ -1,4 +1,4 @@
-import robotIcon from '../assets/robot.png';
+import { robotIcon } from '../assets/index';
 
 export default () => (`
 <nav class="navbar navbar-expand-lg py-2">
