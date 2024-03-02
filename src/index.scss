@@ -253,6 +253,34 @@ h5 {
   transition: 0.7s;
 }
 
+.autocomplete-items {
+  position: absolute;
+  //border: 1px solid $secondary-color;
+  border-bottom: none;
+  z-index: 99;
+  top: auto;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: $primary-color;
+  color: $secondary-color;
+  max-height: 200px;
+  overflow-y: auto;
+  transition: 0.5s;
+  border-radius: 0.25rem 0.25rem 0 0;
+
+  div {
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: $secondary-color;
+      color: $primary-color;
+    }
+  }
+}
+
 .input-group {
   input {
     border-radius: 0.25rem;

@@ -14,6 +14,10 @@ const Chat = class {
     this.elMessage = document.querySelector('.messages-section');
 
     this.bots = entities.map((entity) => new Bot(entity));
+    this.botsCommands = this.bots.map(
+      (bot) => bot.entity.actions.map((action) => action.words)
+    )
+      .flat();
     this.username = localStorage.getItem('username')
       .replace(/"/g, '');
 
@@ -31,6 +35,22 @@ const Chat = class {
 
     const elMessageInput = document.querySelector('.message-input');
     elMessageInput.addEventListener('keyup', (e) => {
+      const messageWords = elMessageInput.value.split(' ');
+      const prefix = messageWords[0];
+
+      const commands = [...new Set(this.botsCommands.filter(
+        (command) => command.includes(prefix) || command.some((word) => word.startsWith(prefix))
+      ))];
+
+      if (commands.length > 0 && prefix.length > 0) {
+        const elCommands = document.querySelector('.autocomplete-items');
+        elCommands.innerHTML = commands.map((command) => `<li>${command[0]}</li>`)
+          .join('');
+      } else if (prefix.length === 0) {
+        const elCommands = document.querySelector('.autocomplete-items');
+        elCommands.innerHTML = '';
+      }
+
       if (e.code === 'Enter') {
         this.userSendMessage();
       }
@@ -87,6 +107,8 @@ const Chat = class {
       avatar: 'https://source.boringavatars.com/'
     });
     elInputMessageContent.value = '';
+    const elCommands = document.querySelector('.autocomplete-items');
+    elCommands.innerHTML = '';
   }
 
   sendMessage(messageData, archiveMessage = false) {
@@ -100,7 +122,9 @@ const Chat = class {
     } = messageData;
 
     const messageToSend = {
-      id: `id${Math.random().toString(16).slice(2)}`,
+      id: `id${Math.random()
+        .toString(16)
+        .slice(2)}`,
       sender,
       receiver,
       date,

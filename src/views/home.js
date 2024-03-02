@@ -14,6 +14,9 @@ export default () => (`
         <div class="messages-section"></div>
       
         <div class="messages">
+        <div class="autocomplete">
+                <ul class="autocomplete-items"></ul>
+        </div>
           <div class="input-group">
               <input type="text" class="form-control message-input" spellcheck="false" placeholder="Type something..." aria-label="Type something..."
                      aria-describedby="button-addon2">
