@@ -44,7 +44,7 @@ const Chat = class {
 
       if (commands.length > 0 && prefix.length > 0) {
         const elCommands = document.querySelector('.autocomplete-items');
-        elCommands.innerHTML = commands.map((command) => `<li>${command[0]}</li>`)
+        elCommands.innerHTML = commands.map((command) => `<li>${command.join(' | ')}</li>`)
           .join('');
       } else if (prefix.length === 0) {
         const elCommands = document.querySelector('.autocomplete-items');
