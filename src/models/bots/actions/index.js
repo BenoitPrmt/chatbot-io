@@ -13,6 +13,7 @@ import fortniteLastAdded from './fortniteLastAdded';
 import fortniteMap from './fortniteMap';
 import FortniteStats from './fortniteStats';
 import exchangeRate from './exchangeRate';
+import ValorantAgents from './valorantAgents';
 
 export {
   helloAction,
@@ -29,5 +30,6 @@ export {
   fortniteShop,
   fortniteLastAdded,
   fortniteMap,
-  FortniteStats
+  FortniteStats,
+  ValorantAgents
 };

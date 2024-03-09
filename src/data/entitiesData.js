@@ -13,7 +13,8 @@ import {
   fortniteLastAdded,
   fortniteMap,
   FortniteStats,
-  exchangeRate
+  exchangeRate,
+  ValorantAgents
 } from '../models/bots/actions/index';
 
 import {
@@ -104,7 +105,8 @@ const entities = [
       fortniteLastAdded,
       fortniteShop,
       fortniteMap,
-      FortniteStats
+      FortniteStats,
+      ValorantAgents
     ]
   }
 ];
