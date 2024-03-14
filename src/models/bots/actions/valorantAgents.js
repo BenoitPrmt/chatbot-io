@@ -23,11 +23,11 @@ const ValorantAgents = {
         Voici plusieurs agents présents dans Valorant :<br/>
         ${datas.map((data) => `
           <img src="${data.displayIcon}" width="40" height="40" class="bg-dark rounded p-1"/> ${data.displayName} : ${data.abilities.map((ability) => {
-          if (ability.displayIcon) {
-            return `<img src="${ability.displayIcon}" width="20" height="20" class="bg-dark rounded p-1"/> ${ability.displayName}`;
-          }
-          return `| ${ability.displayName}`;
-        }).join(' ')}
+  if (ability.displayIcon) {
+    return `<img src="${ability.displayIcon}" width="20" height="20" class="bg-dark rounded p-1"/> ${ability.displayName}`;
+  }
+  return `| ${ability.displayName}`;
+}).join(' ')}
         `).join('<br/>')}
         `
       };
