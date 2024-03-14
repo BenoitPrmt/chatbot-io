@@ -217,16 +217,18 @@ h5 {
   background-color: #101827;
   color: #0d6efd;
   max-height: 200px;
-  overflow-y: auto;
   transition: 0.5s;
-  border-radius: 0.25rem 0.25rem 0 0;
+  padding-top: 10px;
 }
-.autocomplete-items div {
-  padding: 10px;
+.autocomplete-items li {
+  list-style: none;
   cursor: pointer;
   transition: 0.5s;
 }
-.autocomplete-items div:hover {
+.autocomplete-items li::before {
+  content: "- ";
+}
+.autocomplete-items > *:hover {
   background-color: #0d6efd;
   color: #101827;
 }
