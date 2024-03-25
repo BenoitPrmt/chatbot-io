@@ -170,7 +170,6 @@ const Chat = class {
 
     const response = await axios.request(options);
     response.data.forEach((ele) => {
-      console.log(ele);
       this.sendMessage(ele, true);
     });
   }
