@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 import Bot from '../models/bots/index';
 import entities from '../data/entitiesData';
 
@@ -158,13 +160,31 @@ const Chat = class {
     localStorage.setItem('messages', JSON.stringify(data));
   }
 
-  showOldMessages() {
+  async messageFetch() {
+    const apiUrlPhp = 'http://localhost:8080/messages';
+
+    const options = {
+      method: 'GET',
+      url: apiUrlPhp
+    };
+
+    const response = await axios.request(options);
+    response.data.forEach((ele) => {
+      this.sendMessage(ele, true);
+    });
+  }
+
+  async showOldMessages() {
     let data = localStorage.getItem('messages') || '[]';
     data = JSON.parse(data);
 
     data.forEach((message) => {
-      this.sendMessage(message, true);
+      this.sendMessage(
+        message,
+        true
+      );
     });
+    await this.messageFetch();
   }
 
   scrollToBottom() {
