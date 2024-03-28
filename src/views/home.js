@@ -19,7 +19,7 @@ export default () => (`
         </div>
           <div class="input-group">
               <input type="text" class="form-control message-input" spellcheck="false" placeholder="Type something..." aria-label="Type something..."
-                     aria-describedby="button-addon2">
+                     aria-describedby="button-addon2" autofocus>
               <button class="btn btn-dark send-message" type="button" id="button-addon2"><i class="fa-solid fa-paper-plane"></i></button>
           </div>
         </div>
