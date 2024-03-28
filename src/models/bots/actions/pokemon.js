@@ -18,10 +18,11 @@ const pokemonAction = {
       const {
         name: { en },
         sprites: { regular },
-        pokedexId,
         generation,
         types
       } = dataJson;
+
+      const pokedexId = dataJson.pokedex_id;
 
       return {
         message: `Infos on ${en} | ${types.map((type) => `<img width="35px" height="35px" class="mb-2 rounded-circle" src=${type.image}>`).join(' ')}<br>Pokedex ID: ${pokedexId}<br>Generation: ${generation}`,
