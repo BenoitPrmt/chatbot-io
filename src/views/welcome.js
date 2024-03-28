@@ -34,7 +34,7 @@ export default () => {
   <input type="text" class="form-control message-input" id="username" placeholder="Enter your username..." aria-label="Enter your username..."
   aria-describedby="button-addon2">
   </div>
-  <button class="btn btn-primary mt-2" type="button" id="submitBtn">Chat with the bots</button>
+  <button class="btn btn-primary mt-2 w-100" type="button" id="submitBtn">Chat with the bots</button>
   </div>
   </div>`;
 };
