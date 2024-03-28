@@ -64,15 +64,15 @@ const Chat = class {
     elInputField.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowUp') {
         let data = JSON.parse(localStorage.getItem('messages') || '[]');
-        data = data.filter((message) => message.sender === this.username);
+        data = data.filter((message) => message.author === this.username);
         const lastMessage = data[data.length - 1];
-        elInputField.value = lastMessage.content;
+        elInputField.value = lastMessage.message;
       }
     });
   }
 
   checkIfMessageIsCommand(message) {
-    const messageWords = message.content.split(' ');
+    const messageWords = message.message.split(' ');
     const prefix = messageWords[0];
     const args = messageWords.slice(1) || [];
 
@@ -82,12 +82,12 @@ const Chat = class {
           if (botResponse) {
             this.sendMessage(
               {
-                sender: bot.entity.name,
-                receiver: this.username,
-                date: new Date(),
-                content: botResponse.message,
+                author: bot.entity.name,
+                avatar: bot.entity.avatar,
+                bot: true,
+                message: botResponse.message,
                 image: botResponse.image || null,
-                avatar: bot.entity.avatar
+                date: new Date()
               }
             );
           }
@@ -101,12 +101,12 @@ const Chat = class {
     if (elInputMessageContent.value.length === 0) return;
 
     this.sendMessage({
-      sender: this.username,
-      receiver: 'Bot',
-      date: new Date(),
-      content: elInputMessageContent.value,
+      author: this.username,
+      avatar: 'https://source.boringavatars.com/',
+      bot: false,
+      message: elInputMessageContent.value,
       image: null,
-      avatar: 'https://source.boringavatars.com/'
+      date: new Date()
     });
     elInputMessageContent.value = '';
     const elCommands = document.querySelector('.autocomplete-items');
@@ -115,30 +115,30 @@ const Chat = class {
 
   sendMessage(messageData, archiveMessage = false) {
     const {
-      sender,
-      receiver,
-      date,
-      content,
+      author,
+      avatar,
+      bot,
+      message,
       image,
-      avatar
+      date
     } = messageData;
 
     const messageToSend = {
       id: `id${Math.random()
         .toString(16)
         .slice(2)}`,
-      sender,
-      receiver,
-      date,
-      content,
+      author,
+      avatar,
+      bot,
+      message,
       image,
-      avatar
+      date
     };
 
     if (!archiveMessage) {
       this.updateLocalStorage(messageToSend);
 
-      if (messageToSend.sender === this.username) {
+      if (messageToSend.author === this.username) {
         this.checkIfMessageIsCommand(messageToSend);
       }
     }

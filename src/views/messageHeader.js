@@ -1,16 +1,16 @@
-export default (position, sender, avatar) => {
+export default (position, author, avatar) => {
   if (position.includes('end')) {
     return `
-      <h5 class="text-light">${sender}</h5>
+      <h5 class="text-light">${author}</h5>
       <img class="avatar rounded-circle"
            src="${avatar}"
-           alt="${sender}">
+           alt="${author}">
     `;
   }
   return `
       <img class="avatar rounded-circle"
            src="${avatar}"
-           alt="${sender}">
-      <h5 class="text-light">${sender}</h5>
+           alt="${author}">
+      <h5 class="text-light">${author}</h5>
     `;
 };
