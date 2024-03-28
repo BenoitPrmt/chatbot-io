@@ -16,16 +16,18 @@ const pokemonAction = {
       if (status === 404) return { message: `No pokemon found with the name ${args[0]}` };
 
       const {
-        name: { en },
+        name: { en, jp },
         sprites: { regular },
         generation,
-        types
+        types,
+        height,
+        weight
       } = dataJson;
 
       const pokedexId = dataJson.pokedex_id;
 
       return {
-        message: `Infos on ${en} | ${types.map((type) => `<img width="35px" height="35px" class="mb-2 rounded-circle" src=${type.image}>`).join(' ')}<br>Pokedex ID: ${pokedexId}<br>Generation: ${generation}`,
+        message: `Infos on ${en} <i>(${jp})</i> | ${types.map((type) => `<img width="35px" height="35px" class="mb-2 rounded-circle" src=${type.image}>`).join(' ')}<br>Pokedex ID: ${pokedexId}<br>Generation: ${generation}<br>Height: ${height}<br>Weight: ${weight}`,
         image: regular
       };
     } catch (error) {
