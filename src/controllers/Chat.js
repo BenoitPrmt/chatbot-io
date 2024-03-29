@@ -150,17 +150,11 @@ const Chat = class {
   }
 
   updateLocalStorage(newData) {
-    fetch('http://localhost:8080/message', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        user_id: 1,
-        image: newData.image,
-        message: newData.message,
-        date: newData.date
-      })
+    axios.post('http://localhost:8080/message', {
+      user_id: 1,
+      image: newData.image,
+      message: newData.message,
+      date: null
     }).then((r) => {
       console.log(r);
     });
