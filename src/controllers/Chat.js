@@ -150,14 +150,29 @@ const Chat = class {
   }
 
   updateLocalStorage(newData) {
-    const data = JSON.parse(localStorage.getItem('messages') || '[]');
-    if (data.length > 50) data.shift();
+    fetch('http://localhost:8080/message', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        user_id: 1,
+        image: newData.image,
+        message: newData.message,
+        date: newData.date
+      })
+    }).then((r) => {
+      console.log(r);
+    });
 
-    if (!data.includes(newData)) {
-      data.push(newData);
-    }
-
-    localStorage.setItem('messages', JSON.stringify(data));
+    // const data = JSON.parse(localStorage.getItem('messages') || '[]');
+    // if (data.length > 50) data.shift();
+    //
+    // if (!data.includes(newData)) {
+    //   data.push(newData);
+    // }
+    //
+    // localStorage.setItem('messages', JSON.stringify(data));
   }
 
   async messageFetch() {
