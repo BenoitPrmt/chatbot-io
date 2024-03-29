@@ -155,8 +155,6 @@ const Chat = class {
       image: newData.image,
       message: newData.message,
       date: null
-    }).then((r) => {
-      console.log(r);
     });
 
     // const data = JSON.parse(localStorage.getItem('messages') || '[]');
