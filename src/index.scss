@@ -392,4 +392,23 @@ h5 {
     width: 100%;
   }
 
+  .nav-link {
+    font-size: 1em;
+  }
+
+  .card-title {
+    font-size: 1em;
+  }
+
+  .card-text {
+    font-size: 0.7em;
+  }
+
+  .left-side {
+    padding: 0.5em;
+
+    h2 {
+      display: none;
+    }
+  }
 }

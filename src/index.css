@@ -21,10 +21,6 @@ nav img {
   transition: 0.5s;
 }
 nav img:hover {
-  -webkit-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
-  -moz-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
-  -ms-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
-  -o-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
   transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
 }
 nav button {
@@ -133,7 +129,9 @@ h5 {
 .left-side li {
   list-style: none;
   transition: background-color 0.2s linear, transform 0.2s linear;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .left-side li:hover {
   background-color: #0d6efd !important;
@@ -193,7 +191,9 @@ h5 {
   transform: translateY(-5px);
 }
 .card * {
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .card:hover .text-muted {
@@ -246,7 +246,8 @@ h5 {
 .avatar {
   width: 2rem;
   height: 2rem;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .login {
@@ -265,7 +266,6 @@ h5 {
   min-width: 320px;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
@@ -279,7 +279,9 @@ h5 {
 }
 
 .allowTextCopy {
-  user-select: text;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+          user-select: text;
 }
 
 .commands {
@@ -325,6 +327,19 @@ h5 {
   .right-side .card {
     width: 100%;
   }
-}
-
-/*# sourceMappingURL=index.css.map */
+  .nav-link {
+    font-size: 1em;
+  }
+  .card-title {
+    font-size: 1em;
+  }
+  .card-text {
+    font-size: 0.7em;
+  }
+  .left-side {
+    padding: 0.5em;
+  }
+  .left-side h2 {
+    display: none;
+  }
+}/*# sourceMappingURL=index.css.map */
