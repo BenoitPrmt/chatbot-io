@@ -169,9 +169,14 @@ const Chat = class {
     };
 
     const response = await axios.request(options);
-    response.data.forEach((ele) => {
-      this.sendMessage(ele, true);
-    });
+    try {
+      response.data.forEach((ele) => {
+        this.sendMessage(ele, true);
+      });
+    } catch (error) {
+      return error;
+    }
+    return response.data;
   }
 
   async showOldMessages() {
