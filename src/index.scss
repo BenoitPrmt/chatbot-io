@@ -126,7 +126,7 @@ h5 {
         background-color: $secondary-color;
         color: #FFF;
         border: 2px solid $secondary-color;
-        transition: 0.5s;
+        transition: 0.2s;
 
         &:hover {
           background-color: white;
@@ -343,7 +343,7 @@ h5 {
 }
 
 .animation-bots {
-  animation: animation-bots 1.2s;
+  animation: animation-bots 0.8s;
   animation-fill-mode: forwards;
 }
 
