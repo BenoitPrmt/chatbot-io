@@ -4,7 +4,7 @@ export default (data) => {
   const {
     id,
     avatar,
-    author,
+    name,
     botId,
     message,
     date
@@ -21,7 +21,7 @@ export default (data) => {
     <div class="d-flex ${position}" message-id="${id}">
       <div class="card">
         <div class="card-header ${position}">
-        ${messageHeader(position, author, avatar)} 
+        ${messageHeader(position, name, avatar)} 
         </div>
         ${data.image ? `<img src="${data.image}" class="card-img-top" alt="...">` : ''}
         <div class="card-body bg-light text-black ${classPosition}">

@@ -167,7 +167,7 @@ const Chat = class {
       date
     } = messageData;
 
-    const messageToSend = {
+    let messageToSend = {
       id: `id${Math.random()
         .toString(16)
         .slice(2)}`,
@@ -183,19 +183,24 @@ const Chat = class {
     if (!archiveMessage) {
       // console.log(messageToSend);
       // console.log(messageToSend.userId, messageToSend.botId);
+
       const authorMessage = await this.getAuthorMessage(messageToSend.userId || messageToSend.botId, messageToSend.userId ? 'user' : 'bot');
 
-      const messageToSendWithAuthor = {
+      messageToSend = {
         ...messageToSend,
         ...authorMessage
       };
-      this.updateDataBaseMessages(messageToSendWithAuthor);
+      this.updateDataBaseMessages(messageToSend);
       if (messageToSend.author === this.username) {
-        this.checkIfMessageIsCommand(messageToSendWithAuthor);
+        this.checkIfMessageIsCommand(messageToSend);
       }
     }
 
     // this.run(messageToSend);
+
+    console.log('--------');
+    console.log(messageToSend);
+    console.log('--------');
 
     this.elMessage.innerHTML += viewMessage(messageToSend);
     this.scrollToBottom();
