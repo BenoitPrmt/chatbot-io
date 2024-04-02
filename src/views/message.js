@@ -3,9 +3,9 @@ import messageHeader from './messageHeader';
 export default (data) => {
   const {
     id,
-    author,
     avatar,
-    bot,
+    author,
+    botId,
     message,
     date
   } = data;
@@ -14,8 +14,8 @@ export default (data) => {
   ${dateObject.getUTCDate()}-${dateObject.getUTCMonth() + 1}-${dateObject.getUTCFullYear()}
   at ${dateObject.toLocaleTimeString()}
   `;
-  const position = bot ? 'justify-content-start' : 'justify-content-end';
-  const classPosition = bot ? 'left-body' : 'right-body';
+  const position = botId ? 'justify-content-start' : 'justify-content-end';
+  const classPosition = botId ? 'left-body' : 'right-body';
 
   return `
     <div class="d-flex ${position}" message-id="${id}">

@@ -71,6 +71,23 @@ const Chat = class {
     });
   }
 
+  async getAuthorMessage(id, type) {
+    const apiUrlAuthor = `http://localhost:8080/${type}/${id}`;
+    console.log(apiUrlAuthor);
+
+    const options = {
+      method: 'GET',
+      url: apiUrlAuthor
+    };
+
+    const response = await axios.request(options);
+    try {
+      return response.data;
+    } catch (error) {
+      return error;
+    }
+  }
+
   checkIfMessageIsCommand(message) {
     const messageWords = message.message.split(' ');
     const prefix = messageWords[0];
@@ -82,9 +99,8 @@ const Chat = class {
           if (botResponse) {
             this.sendMessage(
               {
-                author: bot.entity.name,
+                name: bot.entity.name,
                 avatar: bot.entity.avatar,
-                bot: true,
                 message: botResponse.message,
                 image: botResponse.image || null,
                 date: new Date()
@@ -101,9 +117,9 @@ const Chat = class {
     if (elInputMessageContent.value.length === 0) return;
 
     this.sendMessage({
-      author: this.username,
+      name: this.username,
       avatar: 'https://source.boringavatars.com/',
-      bot: false,
+      userId: 1,
       message: elInputMessageContent.value,
       image: null,
       date: new Date()
@@ -113,11 +129,13 @@ const Chat = class {
     elCommands.innerHTML = '';
   }
 
-  sendMessage(messageData, archiveMessage = false) {
+  async sendMessage(messageData, archiveMessage = false) {
+    console.log(messageData);
     const {
-      author,
+      name,
+      userId,
+      botId,
       avatar,
-      bot,
       message,
       image,
       date
@@ -127,19 +145,27 @@ const Chat = class {
       id: `id${Math.random()
         .toString(16)
         .slice(2)}`,
-      author,
+      name,
+      userId,
+      botId,
       avatar,
-      bot,
       message,
       image,
       date
     };
 
     if (!archiveMessage) {
-      this.updateLocalStorage(messageToSend);
+      // console.log(messageToSend);
+      // console.log(messageToSend.userId, messageToSend.botId);
+      const authorMessage = await this.getAuthorMessage(messageToSend.userId || messageToSend.botId, messageToSend.userId ? 'user' : 'bot');
 
+      const messageToSendWithAuthor = {
+        ...messageToSend,
+        ...authorMessage
+      };
+      this.updateDataBaseMessages(messageToSendWithAuthor);
       if (messageToSend.author === this.username) {
-        this.checkIfMessageIsCommand(messageToSend);
+        this.checkIfMessageIsCommand(messageToSendWithAuthor);
       }
     }
 
@@ -149,9 +175,10 @@ const Chat = class {
     this.scrollToBottom();
   }
 
-  updateLocalStorage(newData) {
+  updateDataBaseMessages(newData) {
     axios.post('http://localhost:8080/message', {
-      user_id: 1,
+      bot_id: newData.botId,
+      user_id: newData.userId,
       image: newData.image,
       message: newData.message,
       date: null
@@ -187,15 +214,6 @@ const Chat = class {
   }
 
   async showOldMessages() {
-    let data = localStorage.getItem('messages') || '[]';
-    data = JSON.parse(data);
-
-    data.forEach((message) => {
-      this.sendMessage(
-        message,
-        true
-      );
-    });
     await this.messageFetch();
   }
 
