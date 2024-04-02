@@ -24,8 +24,6 @@ const movieAction = {
       .then((response) => {
         const result = response.data.results[0];
 
-        console.log(result);
-
         return {
           message: `🍿 <b>${result.original_title}</b><br>${result.overview}<br>⭐️ <b>${result.vote_average}/10</b> <i>(${result.vote_count} votes)</i>`,
           image: `https://image.tmdb.org/t/p/w342/${result.poster_path}`

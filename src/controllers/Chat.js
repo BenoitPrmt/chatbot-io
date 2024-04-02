@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import Bot from '../models/bots/index';
-import entities from '../data/entitiesData';
+// import entities from '../data/entitiesData';
 
 import viewMessage from '../views/message';
 import viewNav from '../views/nav';
@@ -15,11 +15,19 @@ const Chat = class {
 
     this.elMessage = document.querySelector('.messages-section');
 
-    this.bots = entities.map((entity) => new Bot(entity));
-    this.botsCommands = this.bots.map(
-      (bot) => bot.entity.actions.map((action) => action.words)
-    )
-      .flat();
+    // this.bots = entities.map((entity) => new Bot(entity));
+
+    this.getEntities().then((r) => {
+      this.bots = r;
+
+      // console.log(this.bots);
+      // this.botsCommands = this.bots.map(
+      //   (bot) => bot.entity.actions.map((action) => action.words)
+      // )
+      //   .flat();
+      this.botsCommands = [];
+    });
+
     this.username = localStorage.getItem('username')
       .replace(/"/g, '');
 
@@ -27,6 +35,24 @@ const Chat = class {
     this.scrollToBottom();
     this.addListeners();
     this.enableCommandHistory();
+  }
+
+  async getEntities() {
+    const apiUrlPhp = 'http://localhost:8080/bots';
+
+    const options = {
+      method: 'GET',
+      url: apiUrlPhp
+    };
+
+    const response = await axios.request(options);
+    // console.log(response);
+    try {
+      this.bots = response.data.map((entity) => new Bot(entity));
+    } catch (error) {
+      return error;
+    }
+    return response.data;
   }
 
   addListeners() {
@@ -210,7 +236,7 @@ const Chat = class {
         <div class="col-12">${viewNav()}</div>
       </div>
       <div class="container-fluid pt-4">
-          ${viewHome()}
+          ${viewHome(this.bots)}
       </div>
     `;
   }

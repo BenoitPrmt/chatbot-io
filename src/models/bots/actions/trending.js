@@ -19,7 +19,6 @@ const trendingAction = {
       .request(options)
       .then((response) => {
         const result = response.data.results.slice(10);
-        console.log(result);
 
         let messageContent = '🍿 <b>Films tendances de la semaine</b>';
         result.forEach((movie, index) => {
