@@ -2,7 +2,6 @@ import axios from 'axios';
 
 import Bot from '../models/bots/index';
 // import entities from '../data/entitiesData';
-
 import viewMessage from '../views/message';
 import viewNav from '../views/nav';
 import viewHome from '../views/home';
@@ -15,18 +14,13 @@ const Chat = class {
 
     this.elMessage = document.querySelector('.messages-section');
 
-    // this.bots = entities.map((entity) => new Bot(entity));
-
-    this.getEntities().then((r) => {
-      this.bots = r;
-
-      // console.log(this.bots);
-      // this.botsCommands = this.bots.map(
-      //   (bot) => bot.entity.actions.map((action) => action.words)
-      // )
-      //   .flat();
-      this.botsCommands = [];
-    });
+    this.getEntities()
+      .then(() => {
+        this.botsCommands = this.bots.map(
+          (bot) => bot.entity.actions.map((action) => action.words)
+        )
+          .flat();
+      });
 
     this.username = localStorage.getItem('username')
       .replace(/"/g, '');
@@ -34,7 +28,7 @@ const Chat = class {
     this.showOldMessages();
     this.scrollToBottom();
     this.addListeners();
-    this.enableCommandHistory();
+    // this.enableCommandHistory();
   }
 
   async getEntities() {
@@ -46,9 +40,9 @@ const Chat = class {
     };
 
     const response = await axios.request(options);
-    // console.log(response);
     try {
       this.bots = response.data.map((entity) => new Bot(entity));
+      // this.bots.map((bot) => console.log(bot));
     } catch (error) {
       return error;
     }
@@ -90,7 +84,7 @@ const Chat = class {
     elInputField.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowUp') {
         let data = JSON.parse(localStorage.getItem('messages') || '[]');
-        data = data.filter((message) => message.author === this.username);
+        data = data.filter((message) => message.name === this.username);
         const lastMessage = data[data.length - 1];
         elInputField.value = lastMessage.message;
       }
@@ -129,7 +123,9 @@ const Chat = class {
                 avatar: bot.entity.avatar,
                 message: botResponse.message,
                 image: botResponse.image || null,
-                date: new Date()
+                date: new Date(),
+                botId: bot.entity.id,
+                userId: null
               }
             );
           }
@@ -147,6 +143,7 @@ const Chat = class {
       avatar: 'https://source.boringavatars.com/',
       userId: 1,
       message: elInputMessageContent.value,
+      botId: null,
       image: null,
       date: new Date()
     });
@@ -156,7 +153,6 @@ const Chat = class {
   }
 
   async sendMessage(messageData, archiveMessage = false) {
-    console.log(messageData);
     const {
       name,
       userId,
@@ -180,27 +176,29 @@ const Chat = class {
       date
     };
 
+    const authorId = messageToSend.userId || messageToSend.botId;
+    console.log(authorId, messageToSend.userId, messageToSend.botId);
+    const authorMessage = await this.getAuthorMessage(authorId, messageToSend.userId ? 'user' : 'bot');
+
+    console.log(authorMessage);
+    console.log(messageToSend);
+
+    messageToSend = {
+      ...messageToSend,
+      ...authorMessage
+    };
+
+    console.log(messageToSend);
+
     if (!archiveMessage) {
-      // console.log(messageToSend);
-      // console.log(messageToSend.userId, messageToSend.botId);
-
-      const authorMessage = await this.getAuthorMessage(messageToSend.userId || messageToSend.botId, messageToSend.userId ? 'user' : 'bot');
-
-      messageToSend = {
-        ...messageToSend,
-        ...authorMessage
-      };
+      console.log('Message à enrégistrer');
       this.updateDataBaseMessages(messageToSend);
-      if (messageToSend.author === this.username) {
+      if (!messageToSend.botId) {
         this.checkIfMessageIsCommand(messageToSend);
       }
     }
 
     // this.run(messageToSend);
-
-    console.log('--------');
-    console.log(messageToSend);
-    console.log('--------');
 
     this.elMessage.innerHTML += viewMessage(messageToSend);
     this.scrollToBottom();
@@ -236,7 +234,10 @@ const Chat = class {
     const response = await axios.request(options);
     try {
       response.data.forEach((ele) => {
-        this.sendMessage(ele, true);
+        const data = ele;
+        data.botId = ele.bot_id;
+        data.userId = ele.user_id;
+        this.sendMessage(data, true);
       });
     } catch (error) {
       return error;

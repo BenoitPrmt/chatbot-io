@@ -1,6 +1,10 @@
+import * as allActions from './actions/index';
+
 const Bot = class {
   constructor(entity) {
     this.entity = entity;
+    console.log(this.entity);
+    this.entity.actions = this.entity.actions.split(',').map((action) => allActions[action]);
   }
 
   async runAction(word, args = []) {

@@ -1,5 +1,4 @@
 export default (position, name, avatar) => {
-  console.log(name);
   if (position.includes('end')) {
     return `
       <h5 class="text-light">${name}</h5>
