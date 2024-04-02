@@ -10,17 +10,21 @@ import viewHome from '../views/home';
 const Chat = class {
   constructor() {
     this.el = document.querySelector('#root');
-    this.run();
+    this.startChat();
+  }
 
-    this.elMessage = document.querySelector('.messages-section');
-
-    this.getEntities()
+  async startChat() {
+    await this.getEntities()
       .then(() => {
         this.botsCommands = this.bots.map(
           (bot) => bot.entity.actions.map((action) => action.words)
         )
           .flat();
       });
+
+    this.run();
+
+    this.elMessage = document.querySelector('.messages-section');
 
     this.username = localStorage.getItem('username')
       .replace(/"/g, '');
@@ -93,7 +97,6 @@ const Chat = class {
 
   async getAuthorMessage(id, type) {
     const apiUrlAuthor = `http://localhost:8080/${type}/${id}`;
-    console.log(apiUrlAuthor);
 
     const options = {
       method: 'GET',
@@ -177,21 +180,14 @@ const Chat = class {
     };
 
     const authorId = messageToSend.userId || messageToSend.botId;
-    console.log(authorId, messageToSend.userId, messageToSend.botId);
     const authorMessage = await this.getAuthorMessage(authorId, messageToSend.userId ? 'user' : 'bot');
-
-    console.log(authorMessage);
-    console.log(messageToSend);
 
     messageToSend = {
       ...messageToSend,
       ...authorMessage
     };
 
-    console.log(messageToSend);
-
     if (!archiveMessage) {
-      console.log('Message à enrégistrer');
       this.updateDataBaseMessages(messageToSend);
       if (!messageToSend.botId) {
         this.checkIfMessageIsCommand(messageToSend);

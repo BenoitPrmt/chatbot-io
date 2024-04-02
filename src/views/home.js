@@ -1,12 +1,12 @@
 import homeBotList from './homeBotList';
-import entities from '../data/entitiesData';
+// import entities from '../data/entitiesData';
 
-export default () => (`
+export default (entities) => (`
     <section class="row chat">
       <div class="col-3 left-side">
         <h2 class="text-light">Bots</h2>
         <ul class="list-group gap-3 pt-3 col-11">
-        ${entities.map((bot) => homeBotList(bot)).join('')}
+        ${entities.map((bot) => homeBotList(bot.entity)).join('')}
         </ul>
       </div>
       
