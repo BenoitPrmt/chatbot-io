@@ -11,9 +11,9 @@ import loveAction from './love';
 import fortniteShop from './fortniteShop';
 import fortniteLastAdded from './fortniteLastAdded';
 import fortniteMap from './fortniteMap';
-import FortniteStats from './fortniteStats';
+import fortniteStats from './fortniteStats';
 import exchangeRate from './exchangeRate';
-import ValorantAgents from './valorantAgents';
+import valorantAgents from './valorantAgents';
 
 export {
   helloAction,
@@ -30,6 +30,6 @@ export {
   fortniteShop,
   fortniteLastAdded,
   fortniteMap,
-  FortniteStats,
-  ValorantAgents
+  fortniteStats,
+  valorantAgents
 };
