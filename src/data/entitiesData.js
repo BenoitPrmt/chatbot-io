@@ -9,12 +9,12 @@ import {
   passwordAction,
   weatherAction,
   loveAction,
-  fortniteShop,
-  fortniteLastAdded,
-  fortniteMap,
-  fortniteStats,
-  exchangeRate,
-  valorantAgents,
+  fortniteShopAction,
+  fortniteLastAddedAction,
+  fortniteMapAction,
+  fortniteStatsAction,
+  exchangeRateAction,
+  valorantAgentsAction,
   movieAction,
   trendingAction
 } from '../models/bots/actions/index';
@@ -41,7 +41,7 @@ const entities = [
       helloAction,
       parkingAction,
       passwordAction,
-      exchangeRate
+      exchangeRateAction
     ]
   },
   {
@@ -105,11 +105,11 @@ const entities = [
     avatar: gameHelper,
     actions: [
       helloAction,
-      fortniteLastAdded,
-      fortniteShop,
-      fortniteMap,
-      fortniteStats,
-      valorantAgents
+      fortniteLastAddedAction,
+      fortniteShopAction,
+      fortniteMapAction,
+      fortniteStatsAction,
+      valorantAgentsAction
     ]
   },
   {
