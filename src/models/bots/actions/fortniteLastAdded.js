@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const FortniteLastAdded = {
+const fortniteLastAddedAction = {
   name: 'fortnite Last Added',
   words: ['ftnlast', 'fortniteLast', 'FortniteLast'],
   args: [],
@@ -25,4 +25,4 @@ const FortniteLastAdded = {
   }
 };
 
-export default FortniteLastAdded;
+export default fortniteLastAddedAction;

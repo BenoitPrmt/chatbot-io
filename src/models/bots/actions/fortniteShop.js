@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const FortniteShop = {
+const fortniteShopAction = {
   name: 'fortnite shop',
   words: ['ftnshop', 'fortniteShop', 'FortniteShop'],
   args: [],
@@ -30,4 +30,4 @@ const FortniteShop = {
   }
 };
 
-export default FortniteShop;
+export default fortniteShopAction;

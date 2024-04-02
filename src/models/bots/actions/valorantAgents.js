@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const ValorantAgents = {
+const valorantAgentsAction = {
   name: 'statistiques du compte Fortnite',
   words: ['valoagents', 'valoAgents', 'ValoAgents'],
   args: [],
@@ -37,4 +37,4 @@ const ValorantAgents = {
   }
 };
 
-export default ValorantAgents;
+export default valorantAgentsAction;

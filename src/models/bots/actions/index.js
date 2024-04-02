@@ -8,12 +8,12 @@ import shifumiAction from './shifumi';
 import passwordAction from './password';
 import weatherAction from './weather';
 import loveAction from './love';
-import fortniteShop from './fortniteShop';
-import fortniteLastAdded from './fortniteLastAdded';
-import fortniteMap from './fortniteMap';
-import fortniteStats from './fortniteStats';
-import exchangeRate from './exchangeRate';
-import valorantAgents from './valorantAgents';
+import fortniteShopAction from './fortniteShop';
+import fortniteLastAddedAction from './fortniteLastAdded';
+import fortniteMapAction from './fortniteMap';
+import fortniteStatsAction from './fortniteStats';
+import exchangeRateAction from './exchangeRate';
+import valorantAgentsAction from './valorantAgents';
 import movieAction from './movie';
 import trendingAction from './trending';
 
@@ -22,18 +22,18 @@ export {
   pokemonAction,
   serpentAction,
   parkingAction,
-  exchangeRate,
+  exchangeRateAction,
   swAction,
   headsOrTailsAction,
   shifumiAction,
   passwordAction,
   weatherAction,
   loveAction,
-  fortniteShop,
-  fortniteLastAdded,
-  fortniteMap,
-  fortniteStats,
-  valorantAgents,
+  fortniteShopAction,
+  fortniteLastAddedAction,
+  fortniteMapAction,
+  fortniteStatsAction,
+  valorantAgentsAction,
   movieAction,
   trendingAction
 };

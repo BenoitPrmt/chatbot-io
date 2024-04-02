@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const FortniteStats = {
+const fortniteStatsAction = {
   name: 'fortnite account stats',
   words: ['ftnstats', 'fortniteStats', 'FortniteStats'],
   args: ['accountName'],
@@ -42,4 +42,4 @@ const FortniteStats = {
   }
 };
 
-export default FortniteStats;
+export default fortniteStatsAction;

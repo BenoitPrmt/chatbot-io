@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const ExchangeRate = {
+const exchangeRateAction = {
   name: 'Exchange Rate',
   words: ['exchange', 'ExRate', 'exRate'],
   args: [],
@@ -47,4 +47,4 @@ const ExchangeRate = {
   }
 };
 
-export default ExchangeRate;
+export default exchangeRateAction;

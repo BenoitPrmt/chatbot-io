@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const FortniteMap = {
+const fortniteMapAction = {
   name: 'fortnite',
   words: ['ftnmap', 'fortniteMap', 'FortniteMap'],
   args: [],
@@ -25,4 +25,4 @@ const FortniteMap = {
   }
 };
 
-export default FortniteMap;
+export default fortniteMapAction;
