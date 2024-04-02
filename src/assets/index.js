@@ -6,6 +6,7 @@ import woody from './bots/woody.jpeg';
 import evelyne from './bots/evelyne.jpeg';
 import gameHelper from './bots/game-helper.webp';
 import robotIcon from './robot.png';
+import cinemaAvatar from './bots/cinema.jpg';
 
 export {
   gameMaster,
@@ -15,5 +16,6 @@ export {
   woody,
   evelyne,
   gameHelper,
-  robotIcon
+  robotIcon,
+  cinemaAvatar
 };

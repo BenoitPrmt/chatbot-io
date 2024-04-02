@@ -14,7 +14,9 @@ import {
   fortniteMap,
   fortniteStats,
   exchangeRate,
-  valorantAgents
+  valorantAgents,
+  movieAction,
+  trendingAction
 } from '../models/bots/actions/index';
 
 import {
@@ -24,7 +26,8 @@ import {
   professorOak,
   woody,
   evelyne,
-  gameHelper
+  gameHelper,
+  cinemaAvatar
 } from '../assets/index';
 
 // TODO: REFACTOR IMPORTS
@@ -107,6 +110,16 @@ const entities = [
       fortniteMap,
       fortniteStats,
       valorantAgents
+    ]
+  },
+  {
+    name: 'Cinema',
+    description: 'Search movies',
+    avatar: cinemaAvatar,
+    actions: [
+      helloAction,
+      movieAction,
+      trendingAction
     ]
   }
 ];

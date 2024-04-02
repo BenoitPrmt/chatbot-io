@@ -14,6 +14,8 @@ import fortniteMap from './fortniteMap';
 import fortniteStats from './fortniteStats';
 import exchangeRate from './exchangeRate';
 import valorantAgents from './valorantAgents';
+import movieAction from './movie';
+import trendingAction from './trending';
 
 export {
   helloAction,
@@ -31,5 +33,7 @@ export {
   fortniteLastAdded,
   fortniteMap,
   fortniteStats,
-  valorantAgents
+  valorantAgents,
+  movieAction,
+  trendingAction
 };
