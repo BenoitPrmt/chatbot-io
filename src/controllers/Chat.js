@@ -166,7 +166,7 @@ const Chat = class {
       date
     } = messageData;
 
-    let messageToSend = {
+    const messageToSend = {
       id: `id${Math.random()
         .toString(16)
         .slice(2)}`,
@@ -182,7 +182,7 @@ const Chat = class {
     const authorId = messageToSend.userId || messageToSend.botId;
     const authorMessage = await this.getAuthorMessage(authorId, messageToSend.userId ? 'user' : 'bot');
 
-    messageToSend = {
+    const messageAndAuthorToSend = {
       ...messageToSend,
       ...authorMessage
     };
@@ -190,7 +190,7 @@ const Chat = class {
     if (!archiveMessage) {
       this.updateDataBaseMessages(messageToSend);
       if (!messageToSend.botId) {
-        this.checkIfMessageIsCommand(messageToSend);
+        this.checkIfMessageIsCommand(messageAndAuthorToSend);
       }
     }
 
@@ -205,8 +205,7 @@ const Chat = class {
       bot_id: newData.botId,
       user_id: newData.userId,
       image: newData.image,
-      message: newData.message,
-      date: null
+      message: newData.message
     });
 
     // const data = JSON.parse(localStorage.getItem('messages') || '[]');

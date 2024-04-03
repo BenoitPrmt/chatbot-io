@@ -9,7 +9,7 @@ export default (data) => {
     message,
     date
   } = data;
-  const dateObject = new Date(date);
+  const dateObject = new Date(date * 1000);
   const formattedDate = `
   ${dateObject.getUTCDate()}-${dateObject.getUTCMonth() + 1}-${dateObject.getUTCFullYear()}
   at ${dateObject.toLocaleTimeString()}
