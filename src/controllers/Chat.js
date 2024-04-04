@@ -28,8 +28,7 @@ const Chat = class {
 
     this.elMessage = document.querySelector('.messages-section');
 
-    this.username = localStorage.getItem('username')
-      .replace(/"/g, '');
+    this.username = this.user.name;
 
     this.showOldMessages();
     this.scrollToBottom();
