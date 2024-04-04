@@ -228,12 +228,14 @@ const Chat = class {
 
     const response = await axios.request(options);
     try {
-      response.data.forEach((ele) => {
+      // eslint-disable-next-line no-restricted-syntax
+      for (const ele of response.data) {
         const data = ele;
         data.botId = ele.bot_id;
         data.userId = ele.user_id;
-        this.sendMessage(data, true);
-      });
+        // eslint-disable-next-line no-await-in-loop
+        await this.sendMessage(data, true);
+      }
     } catch (error) {
       return error;
     }
