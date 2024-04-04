@@ -166,7 +166,7 @@ const Chat = class {
       message: elInputMessageContent.value,
       botId: null,
       image: null,
-      date: new Date()
+      date: new Date() / 1000
     });
     elInputMessageContent.value = '';
     const elCommands = document.querySelector('.autocomplete-items');
