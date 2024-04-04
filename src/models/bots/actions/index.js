@@ -16,6 +16,7 @@ import exchangeRateAction from './exchangeRate';
 import valorantAgentsAction from './valorantAgents';
 import movieAction from './movie';
 import trendingAction from './trending';
+import mashupAction from './mashup';
 
 export {
   helloAction,
@@ -35,5 +36,6 @@ export {
   fortniteStatsAction,
   valorantAgentsAction,
   movieAction,
-  trendingAction
+  trendingAction,
+  mashupAction
 };

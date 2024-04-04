@@ -16,7 +16,8 @@ import {
   exchangeRateAction,
   valorantAgentsAction,
   movieAction,
-  trendingAction
+  trendingAction,
+  mashupAction
 } from '../models/bots/actions/index';
 
 import {
@@ -41,7 +42,8 @@ const entities = [
       helloAction,
       parkingAction,
       passwordAction,
-      exchangeRateAction
+      exchangeRateAction,
+      mashupAction
     ]
   },
   {
