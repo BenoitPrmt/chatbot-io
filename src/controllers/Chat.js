@@ -144,7 +144,7 @@ const Chat = class {
                 avatar: bot.entity.avatar,
                 message: botResponse.message,
                 image: botResponse.image || null,
-                date: new Date(),
+                date: new Date() / 1000,
                 botId: bot.entity.id,
                 userId: null
               }
