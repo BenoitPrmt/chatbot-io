@@ -14,6 +14,8 @@ const Chat = class {
   }
 
   async startChat() {
+    this.user = await this.getUserInDatabase('1');
+
     await this.getEntities()
       .then(() => {
         this.botsCommands = this.bots.map(
@@ -33,6 +35,22 @@ const Chat = class {
     this.scrollToBottom();
     this.addListeners();
     // this.enableCommandHistory();
+  }
+
+  async getUserInDatabase(userId) {
+    const apiUrlPhp = `http://localhost:8080/user/${userId}`;
+
+    const options = {
+      method: 'GET',
+      url: apiUrlPhp
+    };
+
+    const response = await axios.request(options);
+    try {
+      return response.data;
+    } catch (error) {
+      return error;
+    }
   }
 
   async getEntities() {
@@ -142,8 +160,8 @@ const Chat = class {
     if (elInputMessageContent.value.length === 0) return;
 
     this.sendMessage({
-      name: this.username,
-      avatar: 'https://source.boringavatars.com/',
+      name: this.user.name,
+      avatar: this.user.avatar,
       userId: 1,
       message: elInputMessageContent.value,
       botId: null,
