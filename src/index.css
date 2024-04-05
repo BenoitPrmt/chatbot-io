@@ -39,10 +39,12 @@ nav button i:hover {
   text-decoration: none;
   color: #6c757d !important;
   font-size: 1.2em;
-  transition: 0.3s !important;
+  transition: 0.7s !important;
 }
 .nav-link:hover {
-  transform: translateY(-5px);
+  color: #0d6efd !important;
+}
+.nav-link.active {
   color: #0d6efd !important;
 }
 

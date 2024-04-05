@@ -56,10 +56,13 @@ nav {
   text-decoration: none;
   color: $grey-color !important;
   font-size: 1.2em;
-  transition: 0.3s !important;
+  transition: 0.7s !important;
 
   &:hover {
-    transform: translateY(-5px);
+    color: $secondary-color !important;
+  }
+
+  &.active {
     color: $secondary-color !important;
   }
 }
