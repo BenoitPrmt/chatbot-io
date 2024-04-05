@@ -113,7 +113,10 @@ const Chat = class {
           };
 
           const response = await axios.request(options);
+
           try {
+            if (Object.keys(response.data).length === 0) return null;
+
             elInputField.value = response.data.message;
             return response.data;
           } catch (error) {
