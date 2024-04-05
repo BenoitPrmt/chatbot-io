@@ -2,7 +2,7 @@ import homeBotList from './homeBotList';
 // import entities from '../data/entitiesData';
 
 export default (entities) => (`
-    <section class="row chat">
+    <section class="row chat animation-chat">
       <div class="col-3 left-side">
         <h2 class="text-light">Bots</h2>
         <ul class="list-group gap-3 pt-3 col-11">

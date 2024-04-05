@@ -348,6 +348,11 @@ h5 {
   animation-fill-mode: forwards;
 }
 
+.animation-chat {
+  animation: animation-chat 0.5s;
+  animation-fill-mode: forwards;
+}
+
 @keyframes animation-bots {
   0% {
     opacity: 0;
@@ -357,6 +362,18 @@ h5 {
   100% {
     opacity: 1;
     transform: translateX(0px);
+  }
+}
+
+@keyframes animation-chat {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
 
