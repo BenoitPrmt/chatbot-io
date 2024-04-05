@@ -33,7 +33,7 @@ const Chat = class {
     this.showOldMessages();
     this.scrollToBottom();
     this.addListeners();
-    // this.enableCommandHistory();
+    this.enableCommandHistory();
   }
 
   async getUserInDatabase(userId) {
@@ -102,13 +102,26 @@ const Chat = class {
 
   enableCommandHistory() {
     const elInputField = document.querySelector('.message-input');
-    elInputField.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowUp') {
-        let data = JSON.parse(localStorage.getItem('messages') || '[]');
-        data = data.filter((message) => message.name === this.username);
-        const lastMessage = data[data.length - 1];
-        elInputField.value = lastMessage.message;
+    elInputField.addEventListener('keydown', async (e) => {
+      if (elInputField.value.length === 0) {
+        if (e.key === 'ArrowUp') {
+          const apiUrlAuthor = 'http://localhost:8080/message/-1';
+
+          const options = {
+            method: 'GET',
+            url: apiUrlAuthor
+          };
+
+          const response = await axios.request(options);
+          try {
+            elInputField.value = response.data.message;
+            return response.data;
+          } catch (error) {
+            return error;
+          }
+        }
       }
+      return null;
     });
   }
 
