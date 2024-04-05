@@ -120,6 +120,8 @@ const Chat = class {
             return error;
           }
         }
+      } else if (e.key === 'ArrowDown') {
+        elInputField.value = '';
       }
       return null;
     });
