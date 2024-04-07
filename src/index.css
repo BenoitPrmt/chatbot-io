@@ -21,7 +21,7 @@ nav img {
   transition: 0.5s;
 }
 nav img:hover {
-  transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
+  transform: scale(1.1);
 }
 nav button {
   color: #FFF !important;

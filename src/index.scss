@@ -29,11 +29,7 @@ nav {
     transition: 0.5s;
 
     &:hover {
-      -webkit-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
-      -moz-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
-      -ms-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
-      -o-transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
-      transform: scale(1.1) rotate(20deg) translate(-10px, 0px);
+      transform: scale(1.1);
     }
   }
 
