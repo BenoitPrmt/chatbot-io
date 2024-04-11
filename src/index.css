@@ -89,6 +89,7 @@ h5 {
 }
 .right-side .card > * {
   background-color: transparent;
+  border: none;
 }
 .right-side .messages {
   background-color: #101827 !important;
@@ -376,6 +377,6 @@ h5 {
     display: none;
   }
   .user-name {
-    font-size: 0.8em;
+    font-size: 1em;
   }
 }/*# sourceMappingURL=index.css.map */
