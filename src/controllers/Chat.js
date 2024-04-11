@@ -87,7 +87,7 @@ const Chat = class {
 
       if (commands.length > 0 && prefix.length > 0) {
         const elCommands = document.querySelector('.autocomplete-items');
-        elCommands.innerHTML = commands.map((command) => `<li>${command.join(' | ')}</li>`)
+        elCommands.innerHTML = commands.map((command) => `<li onclick="document.querySelector('.message-input').value = '${command[0]}'">${command[0]}</li>`)
           .join('');
       } else if (prefix.length === 0) {
         const elCommands = document.querySelector('.autocomplete-items');
