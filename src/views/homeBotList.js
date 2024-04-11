@@ -6,7 +6,7 @@ export default (data) => {
       <img class="avatar rounded-circle"
         src=${avatar}
         alt="${name}" />
-      <h5 class="text-black pt-0 pt-lg-1">${name}</h5>
+      <h5 class="text-black pt-0 pt-lg-1 text-truncate">${name}</h5>
     </div>
   </li>`;
 };
