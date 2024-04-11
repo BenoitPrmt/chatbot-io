@@ -390,6 +390,16 @@ h5 {
 
 @media (max-width: 768px) {
   .chat {
+    width: 100%;
+    padding: 0;
+    height: 85vh;
+
+    .input-group {
+      padding: 0;
+      width: 90%;
+      margin: 0 auto;
+    }
+
     h3 {
       font-size: 1rem;
     }
@@ -405,8 +415,14 @@ h5 {
     font-size: 0.8em;
   }
 
-  .right-side .card {
+  .right-side {
     width: 100%;
+    display: flex;
+    justify-items: center;
+
+    .messages {
+      margin: 0 auto;
+    }
   }
 
   .nav-link {
@@ -422,10 +438,14 @@ h5 {
   }
 
   .left-side {
-    padding: 0.5em;
+    display: none;
 
     h2 {
       display: none;
     }
+  }
+
+  .user-name {
+    font-size: 0.8em;
   }
 }
