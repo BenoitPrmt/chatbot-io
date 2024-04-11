@@ -1,7 +1,5 @@
 const LogOut = class {
-  constructor(params) {
-    this.params = params;
-
+  constructor() {
     this.run();
   }
 
