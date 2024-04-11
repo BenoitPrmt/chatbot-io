@@ -2,6 +2,7 @@ import Router from './Router';
 import Chat from './controllers/Chat';
 import Bots from './controllers/Bots';
 import Welcome from './controllers/Welcome';
+import LogOut from './controllers/LogOut';
 import './index.scss';
 
 const routes = [
@@ -18,6 +19,10 @@ const routes = [
   {
     url: '/welcome',
     controller: Welcome
+  },
+  {
+    url: '/logout',
+    controller: LogOut
   }
 ];
 
