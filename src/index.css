@@ -333,6 +333,16 @@ h5 {
   }
 }
 @media (max-width: 768px) {
+  .chat {
+    width: 100%;
+    padding: 0;
+    height: 85vh;
+  }
+  .chat .input-group {
+    padding: 0;
+    width: 90%;
+    margin: 0 auto;
+  }
   .chat h3 {
     font-size: 1rem;
   }
@@ -342,8 +352,13 @@ h5 {
   p {
     font-size: 0.8em;
   }
-  .right-side .card {
+  .right-side {
     width: 100%;
+    display: flex;
+    justify-items: center;
+  }
+  .right-side .messages {
+    margin: 0 auto;
   }
   .nav-link {
     font-size: 1em;
@@ -355,9 +370,12 @@ h5 {
     font-size: 0.7em;
   }
   .left-side {
-    padding: 0.5em;
+    display: none;
   }
   .left-side h2 {
     display: none;
+  }
+  .user-name {
+    font-size: 0.8em;
   }
 }/*# sourceMappingURL=index.css.map */
