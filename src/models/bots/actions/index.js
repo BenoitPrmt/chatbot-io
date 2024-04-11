@@ -17,10 +17,12 @@ import valorantAgentsAction from './valorantAgents';
 import movieAction from './movie';
 import trendingAction from './trending';
 import mashupAction from './mashup';
+import pokemonRandomAction from './pokemonRandom';
 
 export {
   helloAction,
   pokemonAction,
+  pokemonRandomAction,
   serpentAction,
   parkingAction,
   exchangeRateAction,
