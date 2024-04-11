@@ -25,5 +25,4 @@ const routes = [
     controller: LogOut
   }
 ];
-
 new Router(routes);

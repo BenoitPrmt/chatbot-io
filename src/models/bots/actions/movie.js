@@ -15,7 +15,7 @@ const movieAction = {
       },
       headers: {
         accept: 'application/json',
-        Authorization: 'Bearer '
+        Authorization: `Bearer ${process.env.CINEMA_KEY}`
       }
     };
 
