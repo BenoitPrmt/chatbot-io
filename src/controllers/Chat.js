@@ -1,12 +1,11 @@
 import axios from 'axios';
 
 import Bot from '../models/bots/index';
-// import entities from '../data/entitiesData';
 import viewMessage from '../views/message';
 import viewNav from '../views/nav';
 import viewHome from '../views/home';
 
-// TODO(Benoit) : Refactor le fichier pour optimiser le code
+// TODO(Benoit) : Refactor le fichier pour optimiser le codew
 const Chat = class {
   constructor() {
     this.el = document.querySelector('#root');
@@ -26,12 +25,32 @@ const Chat = class {
 
     this.run();
 
+    document.addEventListener('click', async (event) => {
+      if (event.target.matches('#loadMoreButton')) {
+        const loadMoreButton = this.elMessage.firstElementChild;
+        this.elMessage.removeChild(loadMoreButton);
+
+        let messagesToShow = this.allMessages.slice(-20);
+        messagesToShow = await messagesToShow.sort((a, b) => b.id - a.id);
+
+        const firstMessageId = this.elMessage.firstElementChild.getAttribute('id');
+
+        // eslint-disable-next-line no-restricted-syntax
+        for (const message of messagesToShow.sort((a, b) => b.id - a.id)) {
+          // eslint-disable-next-line no-await-in-loop
+          await this.sendMessage(message, true, true);
+        }
+
+        window.location.href = `#${firstMessageId}`;
+        this.allMessages = this.allMessages.slice(0, -20);
+      }
+    });
+
     this.elMessage = document.querySelector('.messages-section');
 
     this.username = this.user.name;
 
     this.showOldMessages();
-    this.scrollToBottom();
     this.addListeners();
     this.enableCommandHistory();
   }
@@ -177,6 +196,7 @@ const Chat = class {
     if (elInputMessageContent.value.length === 0) return;
 
     this.sendMessage({
+      id: null,
       name: this.user.name,
       avatar: this.user.avatar,
       userId: 1,
@@ -190,8 +210,9 @@ const Chat = class {
     elCommands.innerHTML = '';
   }
 
-  async sendMessage(messageData, archiveMessage = false) {
+  async sendMessage(messageData, archiveMessage = false, atTop = false) {
     const {
+      id,
       name,
       userId,
       botId,
@@ -202,9 +223,7 @@ const Chat = class {
     } = messageData;
 
     const messageToSend = {
-      id: `id${Math.random()
-        .toString(16)
-        .slice(2)}`,
+      id,
       name,
       userId,
       botId,
@@ -229,10 +248,13 @@ const Chat = class {
       }
     }
 
-    // this.run(messageToSend);
-
-    this.elMessage.innerHTML += viewMessage(messageToSend);
-    this.scrollToBottom();
+    if (atTop) {
+      this.elMessage.innerHTML = viewMessage(messageToSend) + this.elMessage.innerHTML;
+    } else {
+      this.elMessage.innerHTML += viewMessage(messageToSend);
+      this.scrollToBottom();
+    }
+    return messageToSend;
   }
 
   updateDataBaseMessages(newData) {
@@ -242,15 +264,6 @@ const Chat = class {
       image: newData.image,
       message: newData.message
     });
-
-    // const data = JSON.parse(localStorage.getItem('messages') || '[]');
-    // if (data.length > 50) data.shift();
-    //
-    // if (!data.includes(newData)) {
-    //   data.push(newData);
-    // }
-    //
-    // localStorage.setItem('messages', JSON.stringify(data));
   }
 
   async messageFetch() {
@@ -263,8 +276,20 @@ const Chat = class {
 
     const response = await axios.request(options);
     try {
+      this.allMessages = response.data.slice(0, -20)
+        .map((message) => ({
+          id: message.id,
+          name: message.name,
+          avatar: message.avatar,
+          userId: message.user_id,
+          botId: message.bot_id,
+          message: message.message,
+          image: message.image,
+          date: message.date
+        }));
+
       // eslint-disable-next-line no-restricted-syntax
-      for (const ele of response.data) {
+      for (const ele of response.data.slice(-20)) {
         const data = ele;
         data.botId = ele.bot_id;
         data.userId = ele.user_id;

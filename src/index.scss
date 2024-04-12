@@ -254,6 +254,12 @@ h5 {
   transition: 0.7s;
 }
 
+.load-more {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .autocomplete-items {
   position: absolute;
   // border: 1px solid $secondary-color;

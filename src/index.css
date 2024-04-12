@@ -89,6 +89,7 @@ h5 {
 }
 .right-side .card > * {
   background-color: transparent;
+  border: none;
 }
 .right-side .messages {
   background-color: #101827 !important;
@@ -203,6 +204,12 @@ h5 {
 .text-muted {
   opacity: 0;
   transition: 0.7s;
+}
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .autocomplete-items {
@@ -370,7 +377,7 @@ h5 {
     display: none;
   }
   .user-name {
-    font-size: 0.8em;
+    font-size: 1em;
   }
 }
 

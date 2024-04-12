@@ -1,17 +1,23 @@
 import homeBotList from './homeBotList';
-// import entities from '../data/entitiesData';
 
-export default (entities) => (`
+export default (entities) => {
+  console.log('test');
+  return `
     <section class="row chat animation-chat">
       <div class="col-3 left-side">
         <h2 class="text-light">Bots.</h2>
         <ul class="list-group gap-3 pt-3 col-11">
-        ${entities.map((bot) => homeBotList(bot.entity)).join('')}
+        ${entities.map((bot) => homeBotList(bot.entity))
+    .join('')}
         </ul>
       </div>
       
       <div class="col-9 right-side">
-        <div class="messages-section"></div>
+        <div class="messages-section">
+                <div class="load-more">
+                        <a class="btn btn-primary" id="loadMoreButton">Load more...</a>
+                </div>
+        </div>
       
         <div class="messages">
         <div class="autocomplete">
@@ -25,5 +31,5 @@ export default (entities) => (`
         </div>
       </div>
     </div>
-  </section>
-`);
+  </section>`;
+};

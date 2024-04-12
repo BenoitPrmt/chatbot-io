@@ -18,7 +18,7 @@ export default (data) => {
   const classPosition = botId ? 'left-body' : 'right-body';
 
   return `
-    <div class="d-flex ${position}" message-id="${id}">
+    <div class="d-flex ${position}" id="${id}">
       <div class="card">
         <div class="card-header ${position}">
         ${messageHeader(position, name, avatar)} 
