@@ -7,6 +7,8 @@ import evelyne from './bots/evelyne.jpeg';
 import gameHelper from './bots/game-helper.webp';
 import favIcon from './icon.png';
 import cinemaAvatar from './bots/cinema.jpg';
+import notification from './sounds/discord-notification.mp3';
+import bomboclaat from './sounds/bomboclaat.mp3';
 
 export {
   gameMaster,
@@ -17,5 +19,7 @@ export {
   evelyne,
   gameHelper,
   favIcon,
-  cinemaAvatar
+  cinemaAvatar,
+  notification,
+  bomboclaat
 };
