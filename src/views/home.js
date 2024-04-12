@@ -1,8 +1,6 @@
 import homeBotList from './homeBotList';
 
-export default (entities) => {
-  console.log('test');
-  return `
+export default (entities) => `
     <section class="row chat animation-chat">
       <div class="col-3 left-side">
         <h2 class="text-light">Bots.</h2>
@@ -32,4 +30,3 @@ export default (entities) => {
       </div>
     </div>
   </section>`;
-};
