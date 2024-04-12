@@ -4,7 +4,7 @@ import Bot from '../models/bots/index';
 import viewMessage from '../views/message';
 import viewNav from '../views/nav';
 import viewHome from '../views/home';
-import { bomboclaat } from '../assets';
+import { pop } from '../assets';
 
 // TODO(Benoit) : Refactor le fichier pour optimiser le codew
 const Chat = class {
@@ -97,7 +97,7 @@ const Chat = class {
       const elInputField = document.querySelector('.message-input');
       if (!this.soundPlayed && elInputField.value !== '') {
         const sound = new Howl({
-          src: bomboclaat,
+          src: pop,
           autoplay: false,
           loop: false,
           volume: 0.2,
@@ -133,7 +133,7 @@ const Chat = class {
         const elInputField = document.querySelector('.message-input');
         if (!this.soundPlayed && elInputField.value !== '') {
           const sound = new Howl({
-            src: bomboclaat,
+            src: pop,
             autoplay: false,
             loop: false,
             volume: 0.2,
