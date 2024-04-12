@@ -1,9 +1,10 @@
 import axios from 'axios';
-
+import { Howl } from 'howler';
 import Bot from '../models/bots/index';
 import viewMessage from '../views/message';
 import viewNav from '../views/nav';
 import viewHome from '../views/home';
+import { bomboclaat } from '../assets';
 
 // TODO(Benoit) : Refactor le fichier pour optimiser le codew
 const Chat = class {
@@ -53,6 +54,7 @@ const Chat = class {
     this.showOldMessages();
     this.addListeners();
     this.enableCommandHistory();
+    this.soundPlayed = false;
   }
 
   async getUserInDatabase(userId) {
@@ -92,6 +94,20 @@ const Chat = class {
   addListeners() {
     const elSendButton = document.querySelector('.send-message');
     elSendButton.addEventListener('click', () => {
+      const elInputField = document.querySelector('.message-input');
+      if (!this.soundPlayed && elInputField.value !== '') {
+        const sound = new Howl({
+          src: bomboclaat,
+          autoplay: false,
+          loop: false,
+          volume: 0.2,
+          onend: () => {
+            this.soundPlayed = false;
+          }
+        });
+        sound.play();
+        this.soundPlayed = true;
+      }
       this.userSendMessage();
     });
 
@@ -114,6 +130,20 @@ const Chat = class {
       }
 
       if (e.code === 'Enter') {
+        const elInputField = document.querySelector('.message-input');
+        if (!this.soundPlayed && elInputField.value !== '') {
+          const sound = new Howl({
+            src: bomboclaat,
+            autoplay: false,
+            loop: false,
+            volume: 0.2,
+            onend: () => {
+              this.soundPlayed = false;
+            }
+          });
+          sound.play();
+          this.soundPlayed = true;
+        }
         this.userSendMessage();
       }
     });

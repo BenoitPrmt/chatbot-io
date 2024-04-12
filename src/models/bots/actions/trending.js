@@ -11,7 +11,7 @@ const trendingAction = {
       params: { language: 'fr-FR' },
       headers: {
         accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NWEwZjI4OTA2OTNmYTNlMDIyOGM0MWRlMzQ0YzdlZSIsInN1YiI6IjY1OTU1NGRmZWEzN2UwMDc1MzRiZGFiNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.OsGQi8836LUD_-S3rYUccnGa0MtbLso16NbFOIcSrAk'
+        Authorization: `Bearer ${process.env.CINEMA_KEY}`
       }
     };
 

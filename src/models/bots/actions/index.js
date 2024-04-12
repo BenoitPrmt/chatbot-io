@@ -7,6 +7,7 @@ import headsOrTailsAction from './headsOrTails';
 import shifumiAction from './shifumi';
 import passwordAction from './password';
 import weatherAction from './weather';
+import weatherClothesAction from './weatherClothes';
 import loveAction from './love';
 import fortniteShopAction from './fortniteShop';
 import fortniteLastAddedAction from './fortniteLastAdded';
@@ -31,6 +32,7 @@ export {
   shifumiAction,
   passwordAction,
   weatherAction,
+  weatherClothesAction,
   loveAction,
   fortniteShopAction,
   fortniteLastAddedAction,
