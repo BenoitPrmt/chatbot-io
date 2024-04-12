@@ -1,8 +1,9 @@
+/* eslint-disable no-console */
 import axios from 'axios';
 import viewNav from '../views/nav';
 import viewWelcome from '../views/welcome';
 
-const Welcome = class {
+class Welcome {
   constructor(params) {
     this.el = document.querySelector('#root');
     this.params = params;
@@ -19,9 +20,15 @@ const Welcome = class {
         id: userId,
         name: username,
         avatar: 'https://source.boringavatars.com/beam'
-      });
+      })
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      window.location.href = '/';
     }
-    window.location.href = '/';
   };
 
   handleWelcome = () => {
@@ -31,12 +38,12 @@ const Welcome = class {
 
   render() {
     return `
-        <div class="row">
-          <div class="col-12">${viewNav()}</div>
-        </div>
-    <div class="container pt-4 d-flex flex-column align-items-center justify-content-center">
+      <div class="row">
+        <div class="col-12">${viewNav()}</div>
+      </div>
+      <div class="container pt-4 d-flex flex-column align-items-center justify-content-center">
         ${viewWelcome()}
-    </div>
+      </div>
     `;
   }
 
@@ -52,6 +59,6 @@ const Welcome = class {
       });
     });
   }
-};
+}
 
 export default Welcome;
