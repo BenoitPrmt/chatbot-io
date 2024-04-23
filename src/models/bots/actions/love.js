@@ -13,7 +13,7 @@ const loveAction = {
         fname: args[1]
       },
       headers: {
-        'X-RapidAPI-Key': '660df63948msh12586b2b545dd54p17b98cjsnb8f468e7e779',
+        'X-RapidAPI-Key': process.env.LOVE_KEY,
         'X-RapidAPI-Host': 'love-calculator.p.rapidapi.com'
       }
     }; try {
