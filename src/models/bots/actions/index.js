@@ -19,6 +19,7 @@ import movieAction from './movie';
 import trendingAction from './trending';
 import mashupAction from './mashup';
 import pokemonRandomAction from './pokemonRandom';
+import swCharactersAction from './starwarsCharacters';
 
 export {
   helloAction,
@@ -28,6 +29,7 @@ export {
   parkingAction,
   exchangeRateAction,
   swAction,
+  swCharactersAction,
   headsOrTailsAction,
   shifumiAction,
   passwordAction,
