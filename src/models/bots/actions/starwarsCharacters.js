@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // eslint-disable-next-line arrow-body-style
 const formatAttribute = (attributeName, attributeValue) => {
-  return attributeValue && attributeValue !== 'NA' ? `${attributeName}: ${attributeValue}<br/>` : '';
+  return attributeValue && attributeValue !== 'NA' ? `${attributeName} ${attributeValue}<br/>` : '';
 };
 
 const swCharactersAction = {
@@ -28,31 +28,13 @@ const swCharactersAction = {
       const formattedCharacters = characters.map((character) => {
         const {
           // eslint-disable-next-line @typescript-eslint/naming-convention
-          birth_year,
-          gender,
-          height,
-          homeworld,
-          mass,
-          name,
-          species
+          name
         } = character;
 
-        const formattedName = formatAttribute('Name', name);
-        const formattedBirthYear = formatAttribute('Birth Year', birth_year);
-        const formattedGender = formatAttribute('Gender', gender);
-        const formattedHeight = formatAttribute('Height', height);
-        const formattedHomeworld = formatAttribute('Homeworld', homeworld);
-        const formattedMass = formatAttribute('Mass', mass);
-        const formattedSpecies = formatAttribute('Species', species);
+        const formattedName = formatAttribute('-', name);
 
         return character && `
-  ${formattedName}
-  ${formattedBirthYear}
-  ${formattedGender}
-  ${formattedHeight}
-  ${formattedHomeworld}
-  ${formattedMass}
-  ${formattedSpecies}<br/>`;
+  ${formattedName}`;
       });
 
       return {
