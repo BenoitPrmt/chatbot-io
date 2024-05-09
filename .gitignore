@@ -7,5 +7,5 @@ yarn.lock
 package-lock.json
 .idea
 id
-.env.local
 .vscode
+.env.local

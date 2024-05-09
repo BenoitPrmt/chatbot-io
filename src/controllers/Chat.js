@@ -6,7 +6,7 @@ import viewNav from '../views/nav';
 import viewHome from '../views/home';
 import { pop } from '../assets';
 
-// TODO(Benoit) : Refactor le fichier pour optimiser le codew
+// TODO(Benoit) : Refactor le fichier pour optimiser le code
 const Chat = class {
   constructor() {
     this.el = document.querySelector('#root');
