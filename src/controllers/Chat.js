@@ -36,6 +36,8 @@ const Chat = class {
 
         const firstMessageId = this.elMessage.firstElementChild.getAttribute('id');
 
+        document.querySelector('.scrollable').addEventListener('wheel', this.preventScroll);
+
         // eslint-disable-next-line no-restricted-syntax
         for (const message of messagesToShow.sort((a, b) => b.id - a.id)) {
           // eslint-disable-next-line no-await-in-loop
@@ -43,6 +45,7 @@ const Chat = class {
         }
 
         window.location.href = `#${firstMessageId}`;
+        document.querySelector('.scrollable').removeEventListener('wheel', this.preventScroll);
         this.allMessages = this.allMessages.slice(0, -20);
       }
     });
@@ -55,6 +58,12 @@ const Chat = class {
     this.addListeners();
     this.enableCommandHistory();
     this.soundPlayed = false;
+  }
+
+  preventScroll(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
   }
 
   async getUserInDatabase(userId) {

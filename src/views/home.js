@@ -11,7 +11,7 @@ export default (entities) => `
       </div>
       
       <div class="col-9 right-side">
-        <div class="messages-section">
+        <div class="messages-section scrollable">
                 <div class="load-more">
                         <a class="btn btn-primary" id="loadMoreButton">Load more...</a>
                 </div>
