@@ -77,7 +77,7 @@ $ npm start
 
 ```bash
 # Clone this project with GitHub
-$ git clone https://github.com/Raxuis/chatbot-io-api.git
+$ git clone https://github.com/BenoitPrmt/chatbot-io-api.git
 
 # Access backend folder
 $ cd chatbot-io-api
